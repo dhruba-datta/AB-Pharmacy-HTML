@@ -804,6 +804,58 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Table Styles
+--------------------------------------------------------------*/
+.table-responsive {
+  margin-top: 30px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: separate;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+/* Alternating row colors */
+.market-row-1 th, .market-row-1 td {
+  background-color: #E8F9FD !important; /* Light gray */
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+.market-row-2 th, .market-row-2 td {
+  background-color: #e3f7f4  !important; /* Slightly darker gray */
+  z-index: 1 !important;
+  position: relative !important;
+}
+
+/* Separate each set */
+.gap-row td {
+  height: 20px;
+  background-color: #ffffff !important; /* White gap */
+  z-index: 0 !important;
+  position: relative !important;
+}
+
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
