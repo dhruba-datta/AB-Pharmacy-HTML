@@ -91,11 +91,11 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(7, 84, 122, 0.926);
+  background: #004244;
 }
 
 #header .logo h1 {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -361,6 +361,13 @@ h6 {
   padding-top: 60px;
 }
 
+.hero-logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 20px; /* Space between logo and heading */
+  animation: fadeInDown 1s; /* Animate.css animation */
+}
+
 #hero h2 {
   color: #fff;
   margin-bottom: 30px;
@@ -483,6 +490,7 @@ h6 {
     transform: translate(85px, 0%);
   }
 }
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -1699,6 +1707,14 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+#footer .footer-logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* extra */
 .portfolio .member .member-info {
   display: flex;
   flex-direction: column;
