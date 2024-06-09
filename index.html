@@ -48,8 +48,6 @@
 
       <div class="logo">
         <h1><a href="index.html">AB Pharmacy</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -59,7 +57,15 @@
           <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
-          <li><a class="nav-link scrollto" href="#portfolio">Products</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#portfolio">Products</a></li> -->
+          <li class="dropdown"><a href="#portfolio"><span>Products</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#filter-active">All</a></li>
+              <li><a href="#filter-app">Drop Down 2</a></li>
+              <li><a href="#filter-card">Drop Down 3</a></li>
+              <li><a href="#filter-web">Drop Down 4</a></li>
+            </ul>
+          </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -120,10 +126,10 @@
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
+          <li id="filter-active" data-filter="*" class="filter-active">All</li>
+          <li id="filter-app" data-filter=".filter-app">App</li>
+          <li id="filter-card" data-filter=".filter-card">Card</li>
+          <li id="filter-web" data-filter=".filter-web">Web</li>
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up">
@@ -136,6 +142,11 @@
               <div class="member-info">
                 <h4>Walter White</h4>
                 <span>Price: &#2547 150</span>
+                <div class="quantity">
+                  <button class="btn btn-sm btn-minus">-</button>
+                  <input type="text" class="count" value="1">
+                  <button class="btn btn-sm btn-plus">+</button>
+                </div>
                 <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
               </div>
             </div>

@@ -785,7 +785,8 @@ section {
 --------------------------------------------------------------*/
 .portfolio #portfolio-flters {
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  visibility: hidden;
 }
 
 .portfolio #portfolio-flters li {
