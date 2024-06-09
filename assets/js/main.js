@@ -64,6 +64,24 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
       }
     });
   };
+
+  // Function to close the navigation bar
+  const closeNavbar = () => {
+    document.getElementById("navbar").classList.remove("show");
+    // Reset dropdown styles
+    document.querySelectorAll(".dropdown ul").forEach((dropdown) => {
+      dropdown.style.opacity = "";
+      dropdown.style.visibility = "";
+    });
+  };
+
+  // Add event listener to each dropdown item
+  document.querySelectorAll(".dropdown ul li a").forEach((item) => {
+    item.addEventListener("click", () => {
+      closeNavbar();
+    });
+  });
+
   window.addEventListener("load", navbarlinksActive);
   onscroll(document, navbarlinksActive);
 
