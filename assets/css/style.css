@@ -362,9 +362,9 @@ h6 {
 }
 
 .hero-logo {
-  width: 100px; /* Adjust the width as needed */
+  width: 150px; /* Adjust the width as needed */
   height: auto;
-  margin-bottom: 20px; /* Space between logo and heading */
+  margin-bottom: 40px; /* Space between logo and heading */
   animation: fadeInDown 1s; /* Animate.css animation */
 }
 
