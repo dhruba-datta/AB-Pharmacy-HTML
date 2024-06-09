@@ -760,7 +760,7 @@ section {
 .services .title {
   margin-left: 40px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Adjusted margin-bottom to reduce space */
   font-size: 18px;
 }
 
@@ -778,6 +778,29 @@ section {
   margin-left: 40px;
   line-height: 24px;
   margin-bottom: 0;
+}
+
+.services .action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-left: 40px; /* Align with title and description */
+  margin-top: 5px; /* Reduced space below title */
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.services .btn-primary {
+  background-color: #007bff;
+}
+
+.services .btn-success {
+  background-color: #28a745;
+}
+
+.services .btn-info {
+  background-color: #17a2b8;
 }
 
 /*--------------------------------------------------------------
@@ -1569,7 +1592,6 @@ section {
 --------------------------------------------------------------*/
 #footer {
   background: #004244;
-  background: linear-gradient(0deg, #002244, #050044);
   color: #fff;
   font-size: 14px;
   text-align: center;
