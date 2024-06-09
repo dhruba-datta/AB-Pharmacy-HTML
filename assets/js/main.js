@@ -291,7 +291,6 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
     },
     true
   );
-
   // Increment quantity
   document.querySelectorAll(".btn-plus").forEach((button) => {
     button.addEventListener("click", () => {
@@ -315,7 +314,11 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
       e.preventDefault();
       const productName = button.parentElement.querySelector("h4").innerText;
       const quantity = button.parentElement.querySelector(".count").value;
-      const whatsappLink = `https://wa.me/+8801912555765?text=Order:%0AProduct Name: ${productName}%0AQuantity: ${quantity}`;
+      const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
+        "Place Order:\nProduct Name: " + productName + "\nQuantity: " + quantity
+      )}`;
+
+      // Open the link in a new tab
       window.open(whatsappLink, "_blank");
     });
   });

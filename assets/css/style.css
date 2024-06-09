@@ -231,11 +231,10 @@ h6 {
     left: -100%;
   }
 }
-
 /**
-* Mobile Navigation 
-*/
-.mobile-nav-toggle {
+ * Mobile Navigation 
+ */
+ .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
   cursor: pointer;
@@ -307,7 +306,7 @@ h6 {
 
 .navbar-mobile .dropdown ul {
   position: static;
-  display: none;
+  display: block; /* Always display dropdowns */
   margin: 10px 20px;
   padding: 10px 0;
   z-index: 99;
@@ -338,6 +337,7 @@ h6 {
 .navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1301,27 +1301,73 @@ section {
 .portfolio .member .member-info h4 {
   font-weight: 700;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 22px;
   color: #2a2c39;
 }
 
 .portfolio .member .member-info span {
   display: block;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   color: #7d7d7d;
 }
 
 .portfolio .member .member-info p {
   font-style: italic;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 26px;
   color: #777777;
+  margin-top: 10px;
 }
 
 .portfolio .member:hover .social {
   opacity: 1;
   bottom: 15px;
+}
+
+/* Style the quantity container */
+.portfolio .member .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left align the quantity container */
+}
+
+/* Style the buttons */
+.portfolio .member .quantity .btn {
+  background-color: #006769;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.portfolio .member .quantity .btn:hover {
+  background-color: #004f50;
+}
+
+/* Style the input field */
+.portfolio .member .quantity .count {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 5px;
+  font-size: 16px;
+  color: #2a2c39;
+}
+
+/* Ensure the buttons have appropriate dimensions */
+.portfolio .member .quantity .btn-minus,
+.portfolio .member .quantity .btn-plus {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 
@@ -1579,7 +1625,13 @@ section {
 #footer .credits {
   font-size: 13px;
 }
-.product{
+.portfolio .member .member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -1590,10 +1642,10 @@ section {
   border-radius: 8px;
   transition: 0.5s;
   margin: 10px;
-  margin-left: 0px;
   color: #fff;
   background: #006769;
 }
+
 
 .product:hover{
   background: #006769;
