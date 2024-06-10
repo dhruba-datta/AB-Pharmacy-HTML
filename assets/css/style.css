@@ -969,7 +969,7 @@ section {
 
 /* Style the input field */
 .portfolio .member .quantity .count {
-  width: 60px;
+  width: 75px;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -1170,7 +1170,7 @@ section {
       display: block;
       width: 100%;
       padding: 10px;
-      background-color: #007bff;
+      background-color: #004f50;
       color: #fff;
       text-align: center;
       text-decoration: none;
@@ -1181,7 +1181,7 @@ section {
     }
 
     .order-button:hover {
-      background-color: #0056b3;
+      background-color: #9fcfd0;
     }
 
     /* Hide the item cart section by default */
@@ -1194,7 +1194,7 @@ section {
   bottom: 20px;
   right: 20px;
   z-index: 999;
-  background-color: #007bff;
+  background-color: #004f50;
   color: white;
   border: none;
   border-radius: 50%;
@@ -1222,6 +1222,9 @@ section {
   padding: 20px;
 }
 
+.floatingCart ,h3{
+  margin-bottom: 20px;
+}
 .close-button {
   align-self: flex-end;
   cursor: pointer;
@@ -1232,7 +1235,7 @@ section {
   display: block;
   text-align: center;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #004f50;
   color: white;
   text-decoration: none;
   border-radius: 4px;
