@@ -339,9 +339,9 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
 
   // Function to send order via WhatsApp
   function sendOrder() {
-    let message;
+    let message = "";
     cartItems.forEach((item) => {
-      message = `Product Name: ${item.productName}\nQuantity: ${item.quantity}\n`;
+      message += `Product Name: ${item.productName}\nQuantity: ${item.quantity}\n`;
     });
     const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
       message
