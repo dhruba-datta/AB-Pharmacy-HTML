@@ -38,6 +38,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -112,26 +113,18 @@
   <!-- ======= main Section ======= -->
   <main id="main">
 
-    <!-- Floating Card -->
-    <div class="floating-card" id="floatingCard">
+    <!-- Floating Cart Button -->
+    <button class="floating-cart-button" onclick="toggleCart()">Cart</button>
+
+    <!-- Floating Cart -->
+    <div class="floating-cart" id="floatingCart">
       <div class="close-button" onclick="toggleCart()">×</div>
-      <div class="card-content">
-        <!-- Content goes here -->
+      <div class="cart-content">
         <h3>Shopping Cart</h3>
-        <!-- Product details will be dynamically added here -->
+        <div class="cart-items"></div>
+        <a href="#" class="order-button">Order Now</a>
       </div>
-      <a href="#" class="order-button">Order Now</a>
-
-      <!-- Item Cart Section -->
-      <section class="item-cart hidden">
-        <!-- Floating Cart Icon -->
-        <div class="cart-icon">
-          <img src="cart-icon.svg" alt="Cart">
-        </div>
-      </section>
-      <!-- End Item Cart Section -->
     </div>
-
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
@@ -495,6 +488,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    function toggleCart() {
+      var floatingCart = document.getElementById('floatingCart');
+      if (floatingCart.style.display === 'none' || floatingCart.style.display === '') {
+        floatingCart.style.display = 'flex';
+      } else {
+        floatingCart.style.display = 'none';
+      }
+    }
+  </script>
 
 </body>
 

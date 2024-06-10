@@ -276,11 +276,15 @@
 
   // Function to update the cart content
   function updateCart() {
-    const cartContent = document.querySelector(".card-content");
-    cartContent.innerHTML = "<h3>Shopping Cart</h3>";
-    cartItems.forEach((item) => {
-      cartContent.innerHTML += `<p>${item.productName}: ${item.quantity}</p>`;
-    });
+    const cartItemsContainer = document.querySelector(".cart-items");
+    cartItemsContainer.innerHTML = ""; // Clear existing content
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+      cartItems.forEach((item) => {
+        cartItemsContainer.innerHTML += `<p>${item.productName}: ${item.quantity}</p>`;
+      });
+    }
   }
 
   // Function to send order via WhatsApp
@@ -322,7 +326,13 @@
     });
   });
 
-  // Handle Order Now button click in cart
+  // Function to toggle the cart visibility
+  function toggleCart() {
+    var floatingCart = document.getElementById("floatingCart");
+    floatingCart.classList.toggle("show");
+  }
+
+  // Add event listener to the order button
   document.querySelector(".order-button").addEventListener("click", () => {
     if (cartItems.length > 0) {
       sendOrder();
@@ -330,23 +340,6 @@
       alert("Your shopping cart is empty!");
     }
   });
-
-  // Function to toggle the cart visibility
-  function toggleCart() {
-    var floatingCard = document.getElementById("floatingCard");
-    floatingCard.classList.toggle("show");
-    var itemCart = document.querySelector(".item-cart");
-    if (floatingCard.classList.contains("show")) {
-      itemCart.classList.remove("hidden");
-    } else {
-      itemCart.classList.add("hidden");
-    }
-  }
-
-  // Add event listener to the cart button
-  document
-    .querySelector(".your-cart-button")
-    .addEventListener("click", toggleCart);
 
   // Close the cart when clicking outside of it
   window.onclick = function (event) {
