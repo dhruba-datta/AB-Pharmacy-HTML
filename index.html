@@ -148,7 +148,7 @@
                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
+                <h4>Walter Blue</h4>
                 <span>Price: &#2547 150</span>
                 <p>Select Quantity</p>
                 <div class="quantity">
@@ -156,11 +156,11 @@
                   <input type="text" class="count" value="1">
                   <button class="btn btn-sm btn-plus">+</button>
                 </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
+                <button class="product">Add to Cart</button>
               </div>
             </div>
           </div>
-
+          <!-- Add other product items similarly -->
           <div class="col-lg-3 col-md-6 portfolio-item filter-surgical">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
@@ -175,18 +175,17 @@
                   <input type="text" class="count" value="1">
                   <button class="btn btn-sm btn-plus">+</button>
                 </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
+                <button class="product">Add to Cart</button>
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 portfolio-item filter-surgical">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
                 <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
+                <h4>this White</h4>
                 <span>Price: &#2547 150</span>
                 <p>Select Quantity</p>
                 <div class="quantity">
@@ -194,11 +193,10 @@
                   <input type="text" class="count" value="1">
                   <button class="btn btn-sm btn-plus">+</button>
                 </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
+                <button class="product">Add to Cart</button>
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 portfolio-item filter-chemical">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
@@ -213,11 +211,10 @@
                   <input type="text" class="count" value="1">
                   <button class="btn btn-sm btn-plus">+</button>
                 </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
+                <button class="product">Add to Cart</button>
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 portfolio-item filter-herbal">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
@@ -232,11 +229,10 @@
                   <input type="text" class="count" value="1">
                   <button class="btn btn-sm btn-plus">+</button>
                 </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
+                <button class="product">Add to Cart</button>
               </div>
             </div>
           </div>
-
           <div class="col-lg-3 col-md-6 portfolio-item filter-diaper">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
@@ -251,54 +247,39 @@
                   <input type="text" class="count" value="1">
                   <button class="btn btn-sm btn-plus">+</button>
                 </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
+                <button class="product">Add to Cart</button>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-babyfood">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Price: &#2547 150</span>
-                <p>Select Quantity</p>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
-                </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-others">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Price: &#2547 150</span>
-                <p>Select Quantity</p>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
-                </div>
-                <a class="product" href="https://wa.me/+8801912555765" target="_blank">Order Now</a>
-              </div>
-            </div>
-          </div>
 
         </div>
 
       </div>
     </section>
     <!-- End Portfolio Section -->
+
+    <!-- Floating Card -->
+    <div class="floating-card" id="floatingCard">
+      <div class="close-button" onclick="toggleCart()">×</div>
+      <div class="card-content">
+        <!-- Content goes here -->
+        <h3>Shopping Cart</h3>
+        <!-- Product details will be dynamically added here -->
+      </div>
+      <a href="#" class="order-button">Order Now</a>
+
+      <!-- Item Cart Section -->
+      <section class="item-cart hidden">
+        <!-- Floating Cart Icon -->
+        <div class="cart-icon">
+          <img src="cart-icon.svg" alt="Cart">
+        </div>
+      </section>
+      <!-- End Item Cart Section -->
+    </div>
+
 
     <!-- ======= Services Section ======= -->
 
@@ -513,8 +494,8 @@
 
   <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>

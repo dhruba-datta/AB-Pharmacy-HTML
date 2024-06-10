@@ -1741,3 +1741,74 @@ section {
   background: #006769;
   color: #fff;
 }
+
+    /* Styling for the floating card */
+    .floating-card {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      width: 300px;
+      max-height: 400px;
+      z-index: 9999;
+      transition: max-height 0.3s ease-out;
+    }
+
+    /* Styling for the close button */
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      color: #555;
+      transition: color 0.3s;
+    }
+
+    .close-button:hover {
+      color: #333;
+    }
+
+    /* Styling for the content */
+    .card-content {
+      padding: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .card-content p {
+      margin: 0;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .card-content p:last-child {
+      border-bottom: none;
+    }
+
+    /* Styling for the order button */
+    .order-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .order-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Hide the item cart section by default */
+.item-cart {
+  display: none;
+}

@@ -309,6 +309,46 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
     },
     true
   );
+  // Array to store selected products and quantities
+  let cartItems = [];
+
+  // Function to add items to the cart
+  function addToCart(productName, quantity) {
+    // Check if the product already exists in the cart
+    const existingItem = cartItems.find(
+      (item) => item.productName === productName
+    );
+    if (existingItem) {
+      // If the product exists, update its quantity
+      existingItem.quantity += parseInt(quantity);
+    } else {
+      // If the product doesn't exist, add it to the cart
+      cartItems.push({ productName, quantity: parseInt(quantity) });
+    }
+    updateCart();
+  }
+
+  // Function to update the cart content
+  function updateCart() {
+    const cartContent = document.querySelector(".card-content");
+    cartContent.innerHTML = "<h3>Shopping Cart</h3>";
+    cartItems.forEach((item) => {
+      cartContent.innerHTML += `<p>${item.productName}: ${item.quantity}</p>`;
+    });
+  }
+
+  // Function to send order via WhatsApp
+  function sendOrder() {
+    let message;
+    cartItems.forEach((item) => {
+      message += `Product Name: ${item.productName}\nQuantity: ${item.quantity}\n`;
+    });
+    const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappLink, "_blank");
+  }
+
   // Increment quantity
   document.querySelectorAll(".btn-plus").forEach((button) => {
     button.addEventListener("click", () => {
@@ -326,18 +366,41 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
     });
   });
 
-  // Handle Order Now button click
+  // Handle Order Now button click in product section
   document.querySelectorAll(".product").forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
       const productName = button.parentElement.querySelector("h4").innerText;
       const quantity = button.parentElement.querySelector(".count").value;
-      const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
-        "Place Order:\nProduct Name: " + productName + "\nQuantity: " + quantity
-      )}`;
-
-      // Open the link in a new tab
-      window.open(whatsappLink, "_blank");
+      addToCart(productName, quantity);
     });
   });
+
+  // Handle Order Now button click in cart
+  document.querySelector(".order-button").addEventListener("click", () => {
+    if (cartItems.length > 0) {
+      sendOrder();
+    } else {
+      alert("Your shopping cart is empty!");
+    }
+  });
+
+  // Function to toggle the cart visibility
+  function toggleCart() {
+    var floatingCard = document.getElementById("floatingCard");
+    var itemCart = document.querySelector(".item-cart");
+    floatingCard.classList.toggle("show");
+    itemCart.classList.toggle("hidden");
+  }
+
+  // Close the cart when clicking outside of it
+  window.onclick = function (event) {
+    var floatingCard = document.getElementById("floatingCard");
+    if (!event.target.matches(".your-cart-button")) {
+      if (floatingCard.classList.contains("show")) {
+        floatingCard.classList.remove("show");
+        document.querySelector(".item-cart").classList.add("hidden");
+      }
+    }
+  };
 })();
