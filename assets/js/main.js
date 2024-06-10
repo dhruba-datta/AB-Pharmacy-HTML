@@ -1,13 +1,3 @@
-/* The above code is a JavaScript script that includes various functionalities for a website template
-called "Selecao" from BootstrapMade.com. Here is a summary of what the code is doing: */
-/**
- * Template Name: Selecao
- * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
- * Updated: Mar 17 2024 with Bootstrap v5.3.3
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
-
 (function () {
   "use strict";
 
@@ -116,22 +106,6 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
   }
 
   /**
-   * Back to top button
-   */
-  let backtotop = select(".back-to-top");
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add("active");
-      } else {
-        backtotop.classList.remove("active");
-      }
-    };
-    window.addEventListener("load", toggleBacktotop);
-    onscroll(document, toggleBacktotop);
-  }
-
-  /**
    * Mobile nav toggle
    */
   on("click", ".mobile-nav-toggle", function (e) {
@@ -156,7 +130,7 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
   );
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on(
     "click",
@@ -179,7 +153,7 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
   );
 
   /**
-   * Scroll with ofset on page load with hash links in the url
+   * Scroll with offset on page load with hash links in the URL
    */
   window.addEventListener("load", () => {
     if (window.location.hash) {
@@ -248,35 +222,6 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
   });
 
   /**
-   * Testimonials slider
-   */
-  new Swiper(".testimonials-slider", {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    slidesPerView: "auto",
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-  });
-
-  /**
    * Animation on scroll
    */
   window.addEventListener("load", () => {
@@ -309,6 +254,7 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
     },
     true
   );
+
   // Array to store selected products and quantities
   let cartItems = [];
 
@@ -388,19 +334,38 @@ called "Selecao" from BootstrapMade.com. Here is a summary of what the code is d
   // Function to toggle the cart visibility
   function toggleCart() {
     var floatingCard = document.getElementById("floatingCard");
-    var itemCart = document.querySelector(".item-cart");
     floatingCard.classList.toggle("show");
-    itemCart.classList.toggle("hidden");
+    var itemCart = document.querySelector(".item-cart");
+    if (floatingCard.classList.contains("show")) {
+      itemCart.classList.remove("hidden");
+    } else {
+      itemCart.classList.add("hidden");
+    }
   }
+
+  // Add event listener to the cart button
+  document
+    .querySelector(".your-cart-button")
+    .addEventListener("click", toggleCart);
 
   // Close the cart when clicking outside of it
   window.onclick = function (event) {
     var floatingCard = document.getElementById("floatingCard");
-    if (!event.target.matches(".your-cart-button")) {
+    if (
+      !event.target.matches(".your-cart-button") &&
+      !floatingCard.contains(event.target)
+    ) {
       if (floatingCard.classList.contains("show")) {
         floatingCard.classList.remove("show");
         document.querySelector(".item-cart").classList.add("hidden");
       }
     }
   };
+
+  // Close the cart when clicking the close button
+  document.querySelector(".close-button").addEventListener("click", () => {
+    var floatingCard = document.getElementById("floatingCard");
+    floatingCard.classList.remove("show");
+    document.querySelector(".item-cart").classList.add("hidden");
+  });
 })();

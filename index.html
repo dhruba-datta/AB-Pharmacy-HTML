@@ -53,11 +53,6 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#about">About</a></li> -->
-          <!-- 
-            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-            <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li> -->
-          <!-- <li><a class="nav-link scrollto" href="#portfolio">Products</a></li> -->
           <li class="dropdown "><a class="nav-link scrollto" href="#portfolio"><span>Products</span> <i
                 class="bi bi-chevron-down"></i></a>
             <ul>
@@ -84,7 +79,6 @@
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
-      <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
           <img src="/assets/img/logo.png" alt="AB Pharmacy Logo" class="hero-logo">
@@ -115,9 +109,28 @@
 
   </section><!-- End Hero -->
 
-
+  <!-- ======= main Section ======= -->
   <main id="main">
 
+    <!-- Floating Card -->
+    <div class="floating-card" id="floatingCard">
+      <div class="close-button" onclick="toggleCart()">×</div>
+      <div class="card-content">
+        <!-- Content goes here -->
+        <h3>Shopping Cart</h3>
+        <!-- Product details will be dynamically added here -->
+      </div>
+      <a href="#" class="order-button">Order Now</a>
+
+      <!-- Item Cart Section -->
+      <section class="item-cart hidden">
+        <!-- Floating Cart Icon -->
+        <div class="cart-icon">
+          <img src="cart-icon.svg" alt="Cart">
+        </div>
+      </section>
+      <!-- End Item Cart Section -->
+    </div>
 
 
     <!-- ======= Portfolio Section ======= -->
@@ -160,7 +173,6 @@
               </div>
             </div>
           </div>
-          <!-- Add other product items similarly -->
           <div class="col-lg-3 col-md-6 portfolio-item filter-surgical">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
@@ -252,33 +264,12 @@
             </div>
           </div>
 
-
-
         </div>
 
       </div>
     </section>
     <!-- End Portfolio Section -->
 
-    <!-- Floating Card -->
-    <div class="floating-card" id="floatingCard">
-      <div class="close-button" onclick="toggleCart()">×</div>
-      <div class="card-content">
-        <!-- Content goes here -->
-        <h3>Shopping Cart</h3>
-        <!-- Product details will be dynamically added here -->
-      </div>
-      <a href="#" class="order-button">Order Now</a>
-
-      <!-- Item Cart Section -->
-      <section class="item-cart hidden">
-        <!-- Floating Cart Icon -->
-        <div class="cart-icon">
-          <img src="cart-icon.svg" alt="Cart">
-        </div>
-      </section>
-      <!-- End Item Cart Section -->
-    </div>
 
 
     <!-- ======= Services Section ======= -->
@@ -493,9 +484,6 @@
   </footer>
 
   <!-- End Footer -->
-
-  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
