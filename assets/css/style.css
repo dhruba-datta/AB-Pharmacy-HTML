@@ -1234,9 +1234,10 @@ section {
 
 
 .floatingCart ,h3{
+  font-family: "Poppins", sans-serif;
   margin-bottom: 0px;
   color: #004f50;
-  font-weight: 600;
+  font-weight: 700;
 }
 .floatingCart ,hr{
   margin-bottom: 15px;
