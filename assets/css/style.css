@@ -1115,8 +1115,9 @@ section {
 }
 
 .product:hover {
-  background: #00595b; /* Adjust the color on hover */
-  color: #fff;
+  background-color: #003d3e; /* Darken button color on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Adjusted box shadow on hover */
+
 }
 
 
@@ -1209,12 +1210,17 @@ section {
   cursor: pointer;
 }
 
+.floating-cart-button:hover {
+  background-color: #003d3e; /* Darken button color on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Adjusted box shadow on hover */
+}
+
 .floating-cart {
   position: fixed;
   bottom: 90px;
   right: 20px;
   z-index: 1000;
-  width: 300px;
+  width: 250px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -1243,3 +1249,4 @@ section {
   border-radius: 4px;
   margin-top: 20px;
 }
+
