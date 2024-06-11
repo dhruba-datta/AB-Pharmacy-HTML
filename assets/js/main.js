@@ -321,6 +321,10 @@
       message
     )}`;
     window.open(whatsappLink, "_blank");
+
+    // Empty the cart
+    cartItems = [];
+    updateCart();
   }
 
   // Increment quantity
