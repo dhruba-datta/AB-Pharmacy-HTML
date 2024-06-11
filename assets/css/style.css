@@ -1231,9 +1231,16 @@ section {
   text-align: center;
   padding: 20px;
 }
+.close-button {
+  position: absolute;
+  top: 5px; /* Adjust this value to move the button higher or lower */
+  right: 10px; /* Adjust if you need to move it horizontally */
+  cursor: pointer;
+}
+
 .close-button i {
   font-size: 18px; /* Adjust the font size as needed */
-  color:#004f50;
+  color: #004f50;
 }
 
 .cart-items {
