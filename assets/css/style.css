@@ -1231,14 +1231,21 @@ section {
   text-align: center;
   padding: 20px;
 }
+.close-button i {
+  font-size: 18px; /* Adjust the font size as needed */
+  color:#004f50;
+}
 
-
+.cart-items {
+  text-align: left;
+}
 .floatingCart ,h3{
   font-family: "Poppins", sans-serif;
   margin-bottom: 0px;
   color: #004f50;
   font-weight: 610;
   font-size: 20px;
+  text-align: left;
 }
 .floatingCart ,hr{
   margin-bottom: 15px;
@@ -1263,3 +1270,12 @@ section {
   width: 160px;
 }
 
+/* CSS for the cross button */
+.remove-item {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px; /* Adjust spacing between text and button */
+}
