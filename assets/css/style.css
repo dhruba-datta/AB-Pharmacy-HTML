@@ -1237,7 +1237,8 @@ section {
   font-family: "Poppins", sans-serif;
   margin-bottom: 0px;
   color: #004f50;
-  font-weight: 700;
+  font-weight: 650;
+  font-size: 22px;
 }
 .floatingCart ,hr{
   margin-bottom: 15px;
