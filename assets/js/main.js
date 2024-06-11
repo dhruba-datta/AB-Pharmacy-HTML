@@ -274,17 +274,25 @@
     updateCart();
   }
 
-  // Function to update the cart content
+  // Function to update the cart content and notification count
   function updateCart() {
     const cartItemsContainer = document.querySelector(".cart-items");
+    const cartNotification = document.getElementById("cart-notification");
     cartItemsContainer.innerHTML = ""; // Clear existing content
+    const uniqueProducts = new Set(); // Using a Set to store unique product names
     if (cartItems.length === 0) {
       cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
     } else {
       cartItems.forEach((item) => {
-        cartItemsContainer.innerHTML += `<p>${item.productName}: ${item.quantity}</p>`;
+        uniqueProducts.add(item.productName); // Add each product name to the set
+        const cartItemElement = document.createElement("div");
+        cartItemElement.classList.add("cart-item");
+        cartItemElement.innerHTML = `<p>${item.productName}: ${item.quantity}</p>`;
+        cartItemsContainer.appendChild(cartItemElement);
       });
     }
+    // Update the notification count with the size of the uniqueProducts Set
+    cartNotification.textContent = uniqueProducts.size.toString();
   }
 
   // Function to send order via WhatsApp
