@@ -1250,23 +1250,28 @@ section {
   max-height: 300px; /* Adjust max-height to fit within the container */
   overflow-y: auto; /* Add scroll for overflow */
   position: relative; /* Add position relative for pseudo-element */
+  padding-left: 5px; /* Add padding to the left side */
 }
 
-/* Hide scrollbar but keep functionality */
+/* Customize scrollbar */
 .cart-items::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar width */
-  height: 0; /* Remove scrollbar height */
+  width: 5px; /* Set the width of the scrollbar */
 }
 
-/* Optional: For Firefox */
-.cart-items {
-  scrollbar-width: none; /* Remove scrollbar in Firefox */
+.cart-items::-webkit-scrollbar-track {
+  background: transparent; /* Set background color of the track */
 }
 
-/* Optional: For Internet Explorer and Edge */
-.cart-items {
-  -ms-overflow-style: none; /* Remove scrollbar in Internet Explorer and Edge */
+.cart-items::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); /* Set color of the thumb */
+  border-radius: 10px; /* Set border radius of the thumb */
 }
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4); /* Set hover color of the thumb */
+}
+
+
 
 .floatingCart ,h3{
   font-family: "Poppins", sans-serif;
