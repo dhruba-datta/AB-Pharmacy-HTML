@@ -254,7 +254,6 @@
     },
     true
   );
-
   // Array to store selected products and quantities
   let cartItems = [];
 
@@ -283,16 +282,33 @@
     if (cartItems.length === 0) {
       cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
     } else {
-      cartItems.forEach((item) => {
+      cartItems.forEach((item, index) => {
         uniqueProducts.add(item.productName); // Add each product name to the set
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
-        cartItemElement.innerHTML = `<p>${item.productName}: ${item.quantity}</p>`;
+        cartItemElement.innerHTML = `
+        <p>${item.productName}: ${item.quantity}</p>
+        <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+      `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
     // Update the notification count with the size of the uniqueProducts Set
     cartNotification.textContent = uniqueProducts.size.toString();
+
+    // Attach event listeners to the remove icons
+    document.querySelectorAll(".remove-icon").forEach((icon) => {
+      icon.addEventListener("click", (event) => {
+        const index = event.target.getAttribute("data-index");
+        removeFromCart(index);
+      });
+    });
+  }
+
+  // Function to remove items from the cart
+  function removeFromCart(index) {
+    cartItems.splice(index, 1);
+    updateCart();
   }
 
   // Function to send order via WhatsApp
@@ -351,22 +367,25 @@
 
   // Close the cart when clicking outside of it
   window.onclick = function (event) {
-    var floatingCard = document.getElementById("floatingCard");
+    var floatingCart = document.getElementById("floatingCart");
     if (
-      !event.target.matches(".your-cart-button") &&
-      !floatingCard.contains(event.target)
+      !event.target.matches(".floating-cart-button") &&
+      !floatingCart.contains(event.target)
     ) {
-      if (floatingCard.classList.contains("show")) {
-        floatingCard.classList.remove("show");
-        document.querySelector(".item-cart").classList.add("hidden");
+      if (floatingCart.classList.contains("show")) {
+        floatingCart.classList.remove("show");
       }
     }
   };
 
   // Close the cart when clicking the close button
   document.querySelector(".close-button").addEventListener("click", () => {
-    var floatingCard = document.getElementById("floatingCard");
-    floatingCard.classList.remove("show");
-    document.querySelector(".item-cart").classList.add("hidden");
+    var floatingCart = document.getElementById("floatingCart");
+    floatingCart.classList.remove("show");
+  });
+
+  // Initialize the cart to show "Your cart is empty." by default
+  document.addEventListener("DOMContentLoaded", () => {
+    updateCart();
   });
 })();

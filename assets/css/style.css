@@ -1293,3 +1293,23 @@ section {
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
 }
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item p {
+  margin: 0;
+  flex: 1;
+}
+
+.remove-icon {
+  cursor: pointer;
+}
+
+.cart-items {
+  max-width: 300px;
+}
