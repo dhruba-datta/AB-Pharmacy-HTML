@@ -969,7 +969,7 @@ section {
 
 /* Style the input field */
 .portfolio .member .quantity .count {
-  width: 75px;
+  width: 69px;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -1110,13 +1110,15 @@ section {
   margin: 10px;
   color: #fff;
   background: #006769;
+  border: none; /* Remove any border */
+  box-shadow: none !important; /* Remove any shadow */
 }
 
-
-.product:hover{
-  background: #006769;
+.product:hover {
+  background: #00595b; /* Adjust the color on hover */
   color: #fff;
 }
+
 
     /* Styling for the floating card */
     .floating-card {
