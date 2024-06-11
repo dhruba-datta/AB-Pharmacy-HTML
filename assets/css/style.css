@@ -1244,9 +1244,41 @@ section {
   color: #004f50;
 }
 
+/* Styling for the cart items */
 .cart-items {
   text-align: left;
+  max-height: 150px; /* Adjust max-height to fit within the container */
+  overflow-y: auto; /* Add scroll for overflow */
+  position: relative; /* Add position relative for pseudo-element */
 }
+
+/* Add shade to indicate content below */
+.cart-items::after {
+  content: ''; /* Add pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Height of the shade */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9)); /* Adjust opacity and colors as needed */
+}
+
+/* Hide scrollbar but keep functionality */
+.cart-items::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar width */
+  height: 0; /* Remove scrollbar height */
+}
+
+/* Optional: For Firefox */
+.cart-items {
+  scrollbar-width: none; /* Remove scrollbar in Firefox */
+}
+
+/* Optional: For Internet Explorer and Edge */
+.cart-items {
+  -ms-overflow-style: none; /* Remove scrollbar in Internet Explorer and Edge */
+}
+
 .floatingCart ,h3{
   font-family: "Poppins", sans-serif;
   margin-bottom: 0px;
