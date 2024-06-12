@@ -892,32 +892,22 @@ section {
   text-align: center;
   color: #2a2c39;
 }
-
-.portfolio .member .member-info h5 {
-  font-weight: 300;
-  margin-bottom: 10px;
-  font-size: 16px;
-  text-align: center;
-  color: #7f8083;
-}
-
-.portfolio .member .member-info span {
-  display: block;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
-  color: #7d7d7d;
-}
-
 .portfolio .member .member-info p {
   font-size: 16px;
   line-height: 26px;
   color: #777777;
   text-align: center;
-  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-
+.portfolio .member .member-info span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #656565;
+  margin-bottom: 10px;
+}
 /* Style the quantity container */
 .portfolio .member .quantity {
   display: flex;
@@ -1105,7 +1095,9 @@ section {
   padding-left: 0px; /* Add padding to the left side */
   max-width: 300px;
 }
-
+.cart-items p{
+  margin-bottom: 10px;
+}
 /* Styling for the h3 element within cart content */
 .cart-content h3 {
   font-family: Poppins, sans-serif; 
