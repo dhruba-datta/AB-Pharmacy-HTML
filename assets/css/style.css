@@ -867,6 +867,9 @@ section {
 }
 
 .portfolio .member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 5px;
@@ -877,6 +880,8 @@ section {
 .portfolio .member .member-img {
   position: relative;
   overflow: hidden;
+  width: 300px;  /* Set the desired width */
+  height: 300px; /* Set the desired height */
 }
 
 
