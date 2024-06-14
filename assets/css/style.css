@@ -1249,7 +1249,7 @@ section {
 
 /* Style for the out-of-stock button */
 button.product.out-of-stock {
-  background-color: grey;
+  background-color: rgb(251, 0, 0);
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.6;

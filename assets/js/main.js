@@ -350,6 +350,7 @@
     if (isOutOfStock) {
       button.classList.add("out-of-stock");
       button.disabled = true;
+      button.textContent = "Out of Stock"; // Change the button text to "Out of Stock"
     } else {
       button.addEventListener("click", (e) => {
         e.preventDefault();
