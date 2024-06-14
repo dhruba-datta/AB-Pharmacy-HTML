@@ -287,9 +287,9 @@
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-        <p>${item.productName}: ${item.quantity}</p>
-        <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-      `;
+      <p>${item.productName} = ${item.quantity}</p>
+      <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+    `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
@@ -346,12 +346,18 @@
 
   // Handle Order Now button click in product section
   document.querySelectorAll(".product").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      const productName = button.parentElement.querySelector("h4").innerText;
-      const quantity = button.parentElement.querySelector(".count").value;
-      addToCart(productName, quantity);
-    });
+    const isOutOfStock = button.getAttribute("data-out-of-stock") === "true";
+    if (isOutOfStock) {
+      button.classList.add("out-of-stock");
+      button.disabled = true;
+    } else {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        const productName = button.parentElement.querySelector("h4").innerText;
+        const quantity = button.parentElement.querySelector(".count").value;
+        addToCart(productName, quantity);
+      });
+    }
   });
 
   // Function to toggle the cart visibility

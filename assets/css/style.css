@@ -1247,6 +1247,13 @@ section {
   background-color: #9fcfd0;
 }
 
+/* Style for the out-of-stock button */
+button.product.out-of-stock {
+  background-color: grey;
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+}
 
 
 
