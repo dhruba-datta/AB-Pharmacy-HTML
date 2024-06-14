@@ -315,7 +315,7 @@
   function sendOrder() {
     let message = "";
     cartItems.forEach((item) => {
-      message += `Product Name: ${item.productName}\nQuantity: ${item.quantity}\n`;
+      message += `${item.productName} = ${item.quantity}\n`;
     });
     const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
       message
