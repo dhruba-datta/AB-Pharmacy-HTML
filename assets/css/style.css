@@ -933,7 +933,7 @@ section {
 
 /* Style the input field */
 .portfolio .member .quantity .count {
-  width: 69px;
+  width: 70px;
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -946,7 +946,7 @@ section {
 /* Ensure the buttons have appropriate dimensions */
 .portfolio .member .quantity .btn-minus,
 .portfolio .member .quantity .btn-plus {
-  width: 36px;
+  width: 40px;
   height: 36px;
   display: flex;
   align-items: center;
@@ -1067,6 +1067,7 @@ section {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
+  width: 160px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 30px;
@@ -1253,6 +1254,7 @@ button.product.out-of-stock {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.6;
+  width: 160px;
 }
 
 
