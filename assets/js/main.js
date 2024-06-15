@@ -282,10 +282,10 @@
 
   // Function to get user details
   function getUserDetails() {
-    userDetails.name = prompt("Please enter your Shop Name:");
-    userDetails.address = prompt("Please enter your Address:");
+    userDetails.name = prompt("Please Enter Your Shop Name:");
+    userDetails.address = prompt("Please Enter Your Address:");
     if (!userDetails.name || !userDetails.address) {
-      alert("Shop Name and Address are required!");
+      alert("Shop Name and Address Are Required!");
       getUserDetails(); // Prompt again if details are missing
     } else {
       userDetailsEntered = true; // Set the flag to true after entering details
