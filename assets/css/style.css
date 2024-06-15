@@ -338,7 +338,7 @@ h6 {
   width: 100%;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(0deg, rgb(35, 145, 170) 0%, rgb(43, 55, 136) 100%);
+  background: linear-gradient(0deg, #08575f 20%, #233648 100%);
   padding: 0;
 }
 
