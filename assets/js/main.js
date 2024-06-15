@@ -280,16 +280,32 @@
     updateCart();
   }
 
-  // Function to get user details
+  // Function to get user details using Bootstrap modal
   function getUserDetails() {
-    userDetails.name = prompt("Please Enter Your Shop Name:");
-    userDetails.address = prompt("Please Enter Your Address:");
-    if (!userDetails.name || !userDetails.address) {
-      alert("Shop Name and Address Are Required!");
-      getUserDetails(); // Prompt again if details are missing
-    } else {
+    const userDetailsModal = new bootstrap.Modal(
+      document.getElementById("userDetailsModal")
+    );
+    const form = document.getElementById("userDetailsForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const shopName = document.getElementById("shopName").value.trim();
+      const shopAddress = document.getElementById("shopAddress").value.trim();
+
+      if (!shopName || !shopAddress) {
+        alert("Shop Name and Address Are Required!");
+        return; // Prevent closing modal if details are missing
+      }
+
+      userDetails.name = shopName;
+      userDetails.address = shopAddress;
       userDetailsEntered = true; // Set the flag to true after entering details
-    }
+      userDetailsModal.hide(); // Close the modal
+
+      // Now continue with adding items to the cart or other operations
+    });
+
+    userDetailsModal.show();
   }
 
   // Function to update the cart content and notification count

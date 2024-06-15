@@ -1258,4 +1258,56 @@ button.product.out-of-stock {
 }
 
 
+/* Style for the Bootstrap modal */
+.modal-content {
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #004f50; /* Header background color */
+  color: white; /* Header text color */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  justify-content: center; /* Center align footer content */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.form-label {
+  color: #004f50; /* Label text color */
+}
+
+.form-control {
+  border-radius: 4px;
+  border: 1px solid #ced4da; /* Input border color */
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Adjusted focus border color */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.btn-primary {
+  background-color: #004f50; /* Button background color */
+  border-color: #004f50; /* Button border color */
+}
+
+.btn-primary:hover {
+  background-color: #003d3e; /* Darken button color on hover */
+  border-color: #003d3e; /* Darken button border color on hover */
+}
 
