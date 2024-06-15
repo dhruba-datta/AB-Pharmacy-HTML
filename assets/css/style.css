@@ -7,12 +7,12 @@ body {
 }
 
 a {
-  color: #006769;
+  color: #08575f;
   text-decoration: none;
 }
 
 a:hover {
-  color: #006769;
+  color: #08575f;
   text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ h6 {
 }
 
 #header.header-scrolled {
-  background: #004244;
+  background: #08575f;
 }
 
 #header .logo h1 {
@@ -1050,9 +1050,10 @@ section {
 }
 
 #footer .footer-logo {
-  width: 100px; /* Adjust the width as needed */
+  width: 150px; /* Adjust the width as needed */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 /* extra */

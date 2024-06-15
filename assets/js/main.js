@@ -254,18 +254,29 @@
     },
     true
   );
+
   // Array to store selected products and quantities
   let cartItems = [];
   let userDetails = { name: "", address: "" }; // Object to store user details
   let userDetailsEntered = false; // Flag to check if user details have been entered
+  let tempProduct = null; // Temporary variable to store product details
 
   // Function to add items to the cart
   function addToCart(productName, quantity) {
     // Check if user details are already provided
     if (!userDetailsEntered) {
+      // Store product details temporarily
+      tempProduct = { productName, quantity };
       getUserDetails(); // Prompt user to enter details
+      return; // Exit function without adding item to cart
     }
 
+    // If user details are entered, add the item to the cart
+    addItemToCart(productName, quantity);
+  }
+
+  // Function to add item to cart after user details are entered
+  function addItemToCart(productName, quantity) {
     // Check if the product already exists in the cart
     const existingItem = cartItems.find(
       (item) => item.productName === productName
@@ -302,6 +313,12 @@
       userDetailsEntered = true; // Set the flag to true after entering details
       userDetailsModal.hide(); // Close the modal
 
+      // After details are entered, check if there's a pending product to add
+      if (tempProduct) {
+        addItemToCart(tempProduct.productName, tempProduct.quantity);
+        tempProduct = null; // Clear temporary product details
+      }
+
       // Now continue with adding items to the cart or other operations
     });
 
@@ -322,9 +339,9 @@
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-        <p>${item.productName} = ${item.quantity}</p>
-        <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-      `;
+            <p>${item.productName} = ${item.quantity}</p>
+            <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+            `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
@@ -391,7 +408,15 @@
         e.preventDefault();
         const productName = button.parentElement.querySelector("h4").innerText;
         const quantity = button.parentElement.querySelector(".count").value;
-        addToCart(productName, quantity);
+
+        // Check if user details are entered
+        if (userDetailsEntered) {
+          addToCart(productName, quantity);
+        } else {
+          // Store the product details temporarily
+          tempProduct = { productName, quantity };
+          getUserDetails(); // Prompt user to enter details
+        }
       });
     }
   });
