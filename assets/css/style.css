@@ -524,7 +524,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #2a2c39;
+  color: #004F50;
 }
 
 /*--------------------------------------------------------------
@@ -614,7 +614,7 @@ section {
 
 .table {
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 1r;
   color: #212529;
   border-collapse: separate;
 }
@@ -891,7 +891,7 @@ section {
   margin-bottom: 5px;
   font-size: 20px;
   text-align: center;
-  color: #2a2c39;
+  color: #015354;
 }
 .portfolio .member .member-info p {
   font-size: 16px;
