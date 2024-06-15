@@ -282,10 +282,10 @@
 
   // Function to get user details
   function getUserDetails() {
-    userDetails.name = prompt("Please enter your name:");
-    userDetails.address = prompt("Please enter your address:");
+    userDetails.name = prompt("Please enter your Shop Name:");
+    userDetails.address = prompt("Please enter your Address:");
     if (!userDetails.name || !userDetails.address) {
-      alert("Name and address are required!");
+      alert("Shop Name and Address are required!");
       getUserDetails(); // Prompt again if details are missing
     } else {
       userDetailsEntered = true; // Set the flag to true after entering details
@@ -332,7 +332,7 @@
 
   // Function to send order via WhatsApp
   function sendOrder() {
-    let message = `Name: ${userDetails.name}\nAddress: ${userDetails.address}\n\nOrder:\n`;
+    let message = `Shop Name: ${userDetails.name}\nAddress: ${userDetails.address}\n\nOrder:\n`;
     cartItems.forEach((item) => {
       message += `${item.productName} = ${item.quantity}\n`;
     });
