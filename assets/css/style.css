@@ -1258,7 +1258,6 @@ button.product.out-of-stock {
   width: 160px;
 }
 
-
 /* Style for the Bootstrap modal */
 
 .modal-content {
@@ -1311,5 +1310,24 @@ button.product.out-of-stock {
 .btn-primary:hover {
   background-color: #003d3e; /* Darken button color on hover */
   border-color: #003d3e; /* Darken button border color on hover */
+}
+
+/* Centering the modal on the page */
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full height of the viewport */
+  z-index: 1050; /* Ensure it's on top, higher than default Bootstrap modal z-index */
+}
+
+.modal-backdrop {
+  z-index: 1040; /* Ensure the backdrop is just below the modal */
+}
+
+.modal.show {
+  display: flex !important;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
 }
 
