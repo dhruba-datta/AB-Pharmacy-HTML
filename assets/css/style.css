@@ -1305,7 +1305,7 @@ button.product.out-of-stock {
 .btn-primary {
   background-color: #004f50; /* Button background color */
   border-color: #004f50; /* Button border color */
-  margin-top: 30px;
+  margin-top: 25px;
   display: block; /* Make the button a block-level element */
   margin-left: auto; /* Center horizontally */
   margin-right: auto; /* Center horizontally */
