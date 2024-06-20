@@ -254,6 +254,7 @@
     },
     true
   );
+
   // Array to store selected products and quantities
   let cartItems = [];
 
@@ -295,12 +296,12 @@
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-        <p class="item-serial">${index + 1}.</p>
-        <p class="item-name">${item.productName}</p>
-        <p class="item-quantity">${item.quantity}</p>
-        <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
-        <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-      `;
+      <p class="item-serial">${index + 1}.</p>
+      <p class="item-name">${item.productName}</p>
+      <p class="item-quantity">${item.quantity}</p>
+      <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
+      <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+    `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
@@ -319,8 +320,37 @@
 
   // Function to remove items from the cart
   function removeFromCart(index) {
-    cartItems.splice(index, 1);
+    const removedItem = cartItems.splice(index, 1)[0];
     updateCart();
+    restoreAddToCartButton(removedItem.productName);
+  }
+
+  // Function to restore "Add to Cart" button
+  function restoreAddToCartButton(productName) {
+    const productElement = Array.from(
+      document.querySelectorAll(".portfolio-item")
+    ).find((el) => el.querySelector("h4").innerText === productName);
+    const addToCartButton = productElement.querySelector(".product");
+    const quantityDiv = productElement.querySelector(".quantity");
+
+    quantityDiv.style.display = "none";
+    addToCartButton.style.display = "block";
+    addToCartButton.addEventListener(
+      "click",
+      (e) => {
+        e.preventDefault();
+        quantityDiv.style.display = "block";
+        addToCartButton.style.display = "none";
+
+        const quantityInput = quantityDiv.querySelector(".count");
+        const quantity = quantityInput.value;
+        const priceText =
+          addToCartButton.parentElement.querySelector("span").textContent;
+        const price = parseFloat(priceText.match(/\d+(\.\d+)?/)[0]); // Extract numeric value from the price text
+        addToCart(productName, price, quantity);
+      },
+      { once: true }
+    );
   }
 
   // Function to send order via WhatsApp
