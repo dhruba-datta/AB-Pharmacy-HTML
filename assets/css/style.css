@@ -915,15 +915,6 @@ button.product.out-of-stock {
 
 }
 
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 /* Floating Cart Button */
 .floating-cart-button {
   position: fixed;
@@ -990,8 +981,8 @@ button.product.out-of-stock {
 
 .cart-container {
   background-color: white;
-  width: 90%;
-  max-width: 600px;
+  width: 100%; /* Full page width */
+  max-width: 800px; /* Adjust max-width to make the cart narrower */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -1033,27 +1024,25 @@ button.product.out-of-stock {
 }
 
 .cart-items {
-  text-align: left;
+  text-align: center; /* Align content center */
   max-height: 300px;
   overflow-y: auto;
   padding-left: 0;
   margin-bottom: 20px;
 }
 
-.cart-items p {
-  margin-bottom: 10px;
-}
-
 .cart-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr auto;
   align-items: center;
   margin-bottom: 10px;
+  padding: 10px 20px; /* Add padding for spacing */
+  gap: 20px; /* Add gap between columns */
 }
 
 .cart-item p {
   margin: 0;
-  flex: 1;
+  text-align: left; /* Align text left */
 }
 
 /* Customize scrollbar */
@@ -1092,4 +1081,19 @@ button.product.out-of-stock {
 
 .order-button:hover {
   background-color: #9fcfd0;
+}
+
+/* New Styles for Modern Look */
+.cart-item p.item-name::before {
+  content: attr(data-serial) ". ";
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.cart-item .item-quantity {
+  text-align: center;
+}
+
+.cart-item .item-price {
+  text-align: right;
 }

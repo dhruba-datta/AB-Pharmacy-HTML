@@ -296,12 +296,15 @@
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-      <p class="item-serial">${index + 1}.</p>
-      <p class="item-name">${item.productName}</p>
-      <p class="item-quantity">${item.quantity}</p>
-      <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
-      <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-    `;
+          <p class="item-name" data-serial="${index + 1}">${
+          item.productName
+        }</p>
+          <p class="item-quantity">${item.quantity} x ৳${item.price.toFixed(
+          2
+        )}</p>
+          <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
+          <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+        `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
