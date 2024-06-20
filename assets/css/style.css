@@ -628,45 +628,47 @@ section {
 /* Different colors for each column */
 .table th:nth-child(1),
 .table td:nth-child(1) {
-  background-color: #91ddcf;
+  background-color: #def7fde2;
   position: relative;
 }
 
 .table th:nth-child(2),
 .table td:nth-child(2) {
-  background-color: #def8de;
+  background-color: #def7fde2;
   position: relative;
 }
 
 .table th:nth-child(3),
 .table td:nth-child(3) {
-  background-color: #ccebff;
+  background-color: #def7fde2;
   position: relative;
 }
 
 
 .mc1{
-  background-color: #BFF6C3 !important;
+  background-color: #d7ffe993 !important;
+  text-align: left !important;
 }
 
 .mc2{
-  background-color: #CAF4FF !important;
+  background-color: #def7fde2 !important;
+  text-align: left !important;
 }
 
 .o1{
-  background-color: #BFF6C3 !important;
+  background-color: #d7ffe993 !important;
 }
 
 .o2{
-  background-color: #CAF4FF !important;
+  background-color: #def7fde2 !important;
 }
 
 .d1{
-  background-color: #BFF6C3 !important;
+  background-color: #d7ffe993 !important;
 }
 
 .d2{
-  background-color: #CAF4FF !important;
+  background-color: #def7fde2 !important;
 }
 
 /*--------------------------------------------------------------
