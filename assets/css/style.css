@@ -562,7 +562,7 @@ section {
 .services .title {
   margin-left: 40px;
   font-weight: 700;
-  margin-bottom: 10px; /* Adjusted margin-bottom to reduce space */
+  margin-bottom: 10px;
   font-size: 18px;
 }
 
@@ -585,8 +585,8 @@ section {
 .services .action-button {
   display: inline-block;
   padding: 10px 20px;
-  margin-left: 40px; /* Align with title and description */
-  margin-top: 5px; /* Reduced space below title */
+  margin-left: 40px;
+  margin-top: 5px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -608,13 +608,10 @@ section {
 /*--------------------------------------------------------------
 # Table Styles
 --------------------------------------------------------------*/
-.table-responsive {
-  margin-top: 30px;
-}
 
 .table {
   width: 100%;
-  margin-bottom: 1r;
+  margin-bottom: 1rem;
   color: #212529;
   border-collapse: separate;
 }
@@ -622,38 +619,29 @@ section {
 .table th,
 .table td {
   padding: 0.75rem;
-  vertical-align: top;
+  vertical-align: middle; /* Center content vertically */
   border-top: 1px solid #dee2e6;
+  text-align: center; /* Center content horizontally */
 }
 
-.table thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
+
+/* Different colors for each column */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  background-color: #f7dddd;
+  position: relative;
 }
 
-.table tbody + tbody {
-  border-top: 2px solid #dee2e6;
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  background-color: #def8de;
+  position: relative;
 }
 
-/* Alternating row colors */
-.market-row-1 th, .market-row-1 td {
-  background-color: #E8F9FD !important; /* Light gray */
-  z-index: 1 !important;
-  position: relative !important;
-}
-
-.market-row-2 th, .market-row-2 td {
-  background-color: #e3f7f4  !important; /* Slightly darker gray */
-  z-index: 1 !important;
-  position: relative !important;
-}
-
-/* Separate each set */
-.gap-row td {
-  height: 20px;
-  background-color: #ffffff !important; /* White gap */
-  z-index: 0 !important;
-  position: relative !important;
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  background-color: #ccebff;
+  position: relative;
 }
 
 
