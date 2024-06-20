@@ -916,64 +916,42 @@ button.product.out-of-stock {
 }
 
 
-/* Styling for the cart items */
-.cart-items {
-  text-align: left;
-  max-height: 300px; /* Adjust max-height to fit within the container */
-  overflow-y: auto; /* Add scroll for overflow */
-  position: relative; /* Add position relative for pseudo-element */
-  padding-left: 0px; /* Add padding to the left side */
-  max-width: 300px;
-}
-.cart-items p{
-  margin-bottom: 10px;
-}
-/* Styling for the h3 element within cart content */
-.cart-content h3 {
-  font-family: Poppins, sans-serif; 
-  font-size: 24px; /* Adjust the font size */
-  font-weight: bold; /* Make the text bold */
-  color: #004f50; /* Change the text color */
-  text-align: left; /* Center the text */
-}
-
-/* Styling for the h3 element within cart content */
-.cart-content hr {
-  margin-top: 5px;
-
-}
-
-/* Styling for the cart item */
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.cart-item p {
+/* General Reset */
+* {
   margin: 0;
-  flex: 1;
-}
-/* Customize scrollbar */
-.cart-items::-webkit-scrollbar {
-  width: 5px; /* Set the width of the scrollbar */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.cart-items::-webkit-scrollbar-track {
-  background: transparent; /* Set background color of the track */
+/* Floating Cart Button */
+.floating-cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #004f50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 999;
 }
 
-.cart-items::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1); /* Set color of the thumb */
-  border-radius: 10px; /* Set border radius of the thumb */
+.floating-cart-button:hover {
+  background-color: #003d3e;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-.cart-items::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.4); /* Set hover color of the thumb */
+.floating-cart-button .bi-cart {
+  font-size: 24px;
 }
 
-/* Positioning the cart notification */
 .cart-notification {
   position: absolute;
   top: -6px;
@@ -988,10 +966,38 @@ button.product.out-of-stock {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for the close button */
+/* Full Page Floating Cart */
+.floating-cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.floating-cart.active {
+  display: flex;
+}
+
+.cart-container {
+  background-color: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -1002,65 +1008,76 @@ button.product.out-of-stock {
   transition: color 0.3s;
 }
 
-/* Styling for the floating card */
-.floating-cart {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  z-index: 1000;
-  width: 220px;
-  background-color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  display: none;
-  flex-direction: column;
-  align-items: center; /* Center align all items */
-  text-align: center;
+.close-button:hover {
+  color: #003d3e;
+}
+
+.cart-content {
   padding: 20px;
+  text-align: center;
 }
 
-/* Style for the floating cart button */
-.floating-cart-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: #004f50;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.floating-cart-button:hover {
-  background-color: #003d3e; /* Darken button color on hover */
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3); /* Adjusted box shadow on hover */
-}
-
-
-.floatingCart h3 {
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 0px;
+.cart-content h3 {
+  font-size: 24px;
+  font-weight: bold;
   color: #004f50;
-  font-weight: 610;
-  font-size: 80px;
-  text-align: left;
+  margin-bottom: 10px;
 }
 
-.floatingCart hr {
-  margin-bottom: 15px;
+.cart-content hr {
+  border: 0;
+  border-top: 1px solid #eee;
   margin-top: 5px;
+  margin-bottom: 15px;
   color: #004f50;
 }
 
-/* Styling for the order button */
+.cart-items {
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.cart-items p {
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-item p {
+  margin: 0;
+  flex: 1;
+}
+
+/* Customize scrollbar */
+.cart-items::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.cart-content #total-price {
+  font-weight: bold;
+}
+
 .order-button {
   display: block;
   padding: 10px;
@@ -1068,13 +1085,11 @@ button.product.out-of-stock {
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  margin-top: 15px !important;
+  margin-top: 15px;
   width: 190px;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
 }
+
 .order-button:hover {
   background-color: #9fcfd0;
 }
-
-
-

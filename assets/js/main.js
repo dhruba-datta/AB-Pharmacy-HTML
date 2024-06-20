@@ -445,8 +445,8 @@
 
   // Function to toggle the cart visibility
   function toggleCart() {
-    var floatingCart = document.getElementById("floatingCart");
-    floatingCart.classList.toggle("show");
+    const cart = document.getElementById("floatingCart");
+    cart.classList.toggle("active");
   }
 
   // Add event listener to the order button
