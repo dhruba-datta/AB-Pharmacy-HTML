@@ -254,28 +254,27 @@
     },
     true
   );
-
   // Array to store selected products and quantities
   let cartItems = [];
 
   // Function to add items to the cart
-  function addToCart(productName, quantity) {
-    // Add the item to the cart directly
-    addItemToCart(productName, quantity);
+  function addToCart(productName, price, quantity) {
+    addItemToCart(productName, price, quantity);
   }
 
   // Function to add item to cart
-  function addItemToCart(productName, quantity) {
-    // Check if the product already exists in the cart
+  function addItemToCart(productName, price, quantity) {
     const existingItem = cartItems.find(
       (item) => item.productName === productName
     );
     if (existingItem) {
-      // If the product exists, update its quantity
       existingItem.quantity += parseInt(quantity);
     } else {
-      // If the product doesn't exist, add it to the cart
-      cartItems.push({ productName, quantity: parseInt(quantity) });
+      cartItems.push({
+        productName,
+        price: parseFloat(price),
+        quantity: parseInt(quantity),
+      });
     }
     updateCart();
   }
@@ -284,24 +283,30 @@
   function updateCart() {
     const cartItemsContainer = document.querySelector(".cart-items");
     const cartNotification = document.getElementById("cart-notification");
+    const totalPriceElement = document.getElementById("total-price");
     cartItemsContainer.innerHTML = ""; // Clear existing content
-    const uniqueProducts = new Set(); // Using a Set to store unique product names
+    let total = 0;
+
     if (cartItems.length === 0) {
       cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
     } else {
       cartItems.forEach((item, index) => {
-        uniqueProducts.add(item.productName); // Add each product name to the set
+        total += item.price * item.quantity;
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-          <p>${item.productName} = ${item.quantity}</p>
-          <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-          `;
+        <p class="item-serial">${index + 1}.</p>
+        <p class="item-name">${item.productName}</p>
+        <p class="item-quantity">${item.quantity}</p>
+        <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
+        <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+      `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
-    // Update the notification count with the size of the uniqueProducts Set
-    cartNotification.textContent = uniqueProducts.size.toString();
+
+    cartNotification.textContent = cartItems.length.toString();
+    totalPriceElement.textContent = `৳${total.toFixed(2)}`;
 
     // Attach event listeners to the remove icons
     document.querySelectorAll(".remove-icon").forEach((icon) => {
@@ -372,31 +377,41 @@
     updateCart();
   }
 
-  // Handle Add to Cart button click in product section
-  document.querySelectorAll(".product").forEach((button) => {
-    const isOutOfStock = button.getAttribute("data-out-of-stock") === "true";
-    if (isOutOfStock) {
-      button.classList.add("out-of-stock");
-      button.disabled = true;
-      button.textContent = "Out of Stock"; // Change the button text to "Out of Stock"
-    } else {
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-        const productName = button.parentElement.querySelector("h4").innerText;
-        const quantityDiv = button.parentElement.querySelector(".quantity");
-        const quantityInput = quantityDiv.querySelector(".count");
+  // Function to attach event listeners to Add to Cart buttons
+  function attachAddToCartListeners() {
+    document.querySelectorAll(".product").forEach((button) => {
+      const isOutOfStock = button.getAttribute("data-out-of-stock") === "true";
+      if (isOutOfStock) {
+        button.classList.add("out-of-stock");
+        button.disabled = true;
+        button.textContent = "Out of Stock"; // Change the button text to "Out of Stock"
+      } else {
+        button.addEventListener(
+          "click",
+          (e) => {
+            e.preventDefault();
+            const productElement = button.closest(".portfolio-item");
+            const productName = productElement.querySelector("h4").innerText;
+            const quantityDiv = button.parentElement.querySelector(".quantity");
+            const quantityInput = quantityDiv.querySelector(".count");
 
-        // Show the quantity selection tool
-        quantityDiv.style.display = "block";
-        // Remove the "Add to Cart" button
-        button.style.display = "none";
+            // Show the quantity selection tool
+            quantityDiv.style.display = "block";
+            // Remove the "Add to Cart" button
+            button.style.display = "none";
 
-        // Add the item to the cart with the initial quantity
-        const quantity = quantityInput.value;
-        addToCart(productName, quantity);
-      });
-    }
-  });
+            // Add the item to the cart with the initial quantity
+            const quantity = quantityInput.value;
+            const priceText =
+              button.parentElement.querySelector("span").textContent;
+            const price = parseFloat(priceText.match(/\d+(\.\d+)?/)[0]); // Extract numeric value from the price text
+            addToCart(productName, price, quantity);
+          },
+          { once: true }
+        ); // Attach the event listener only once
+      }
+    });
+  }
 
   // Function to toggle the cart visibility
   function toggleCart() {
@@ -435,6 +450,7 @@
   // Initialize the cart to show "Your cart is empty." by default
   document.addEventListener("DOMContentLoaded", () => {
     updateCart();
+    attachAddToCartListeners();
   });
 
   // table popup
