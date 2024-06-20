@@ -1324,6 +1324,15 @@
 
 
     <!-- ======= Services Section ======= -->
+    <!-- Modal Structure -->
+    <div id="marketModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="marketName"></h2>
+        <p id="marketDetails"></p>
+      </div>
+    </div>
+
     <section id="services" class="services">
       <div class="container">
         <div class="section-title" data-aos="zoom-out">
@@ -1346,114 +1355,309 @@
                 <tbody>
                   <!-- First set of markets -->
                   <tr>
-                    <td class="mc1">Surjonagar <span class="tooltip">Surjonagar Bazar, Dattapara Bazar, Naya Bazar,
-                        Utrail Hat, Utrail Ghat (Mogra Bazar | Gp Tower)</span></td>
+                    <td class="mc1" data-market-name="Surjonagar"
+                      data-market-details="Surjonagar Bazar, Dattapara Bazar, Naya Bazar, Utrail Hat, Utrail Ghat (Mogra Bazar | Gp Tower)">
+                      Surjonagar</td>
                     <td class="o1" rowspan="4">Saturday</td>
                     <td class="d1" rowspan="4">Sunday</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Sheruail <span class="tooltip">Shiruail Bazar, Bagra Bazar, Kobirajpur Bazar,
-                        Bagmara Stand, Hazir More (Kobirajpur Police Fari, Kobirajpur Hos. Road)</span></td>
+                    <td class="mc1" data-market-name="Sheruail"
+                      data-market-details="Shiruail Bazar, Bagra Bazar, Kobirajpur Bazar, Bagmara Stand, Hazir More (Kobirajpur Police Fari, Kobirajpur Hos. Road)">
+                      Sheruail</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Chanderchar <span class="tooltip">Chanderchar Bazar (Vandari, Tengramari | Jogdher
-                        Math)</span></td>
+                    <td class="mc1" data-market-name="Chanderchar"
+                      data-market-details="Chanderchar Bazar (Vandari, Tengramari | Jogdher Math)">Chanderchar</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Bhadrashan <span class="tooltip">Jel Khanar More, School Get, Bhadrashan Bazar
-                        (Dokhin Crock Chor | Gopalpur Bazar)</span></td>
+                    <td class="mc1" data-market-name="Bhadrashan"
+                      data-market-details="Jel Khanar More, School Get, Bhadrashan Bazar (Dokhin Crock Chor | Gopalpur Bazar)">
+                      Bhadrashan</td>
                   </tr>
                   <!-- Second set of markets -->
                   <tr>
-                    <td class="mc2">Bondorkhola <span class="tooltip">Badhadpur Bazar, Bondorkhola Bazar, Bondorkhola
-                        Stand, Khaser Hat, Sonaratori, Matborchar Road (Hakim Matbor Hat)</span></td>
+                    <td class="mc2" data-market-name="Bondorkhola"
+                      data-market-details="Badhadpur Bazar, Bondorkhola Bazar, Bondorkhola Stand, Khaser Hat, Sonaratori, Matborchar Road (Hakim Matbor Hat)">
+                      Bondorkhola</td>
                     <td class="o2" rowspan="4">Sunday</td>
                     <td class="d2" rowspan="4">Monday</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Panchar <span class="tooltip">Panchar Bazar, Jamaitusunnah, Thakur Bazar, Panchar
-                        Main Road, Kacha Bazar, Sonaratori</span></td>
+                    <td class="mc2" data-market-name="Panchar"
+                      data-market-details="Panchar Bazar, Jamaitusunnah, Thakur Bazar, Panchar Main Road, Kacha Bazar, Sonaratori">
+                      Panchar</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Kazirhat <span class="tooltip">Kazirhat Main Road, Kazirhat Bazar</span></td>
+                    <td class="mc2" data-market-name="Kazirhat"
+                      data-market-details="Kazirhat Main Road, Kazirhat Bazar">Kazirhat</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Majhirghat <span class="tooltip">Majhirghat Bus Stand, Rupbahar Hat, Majhighat
-                        (Rupbahar Hat Bazar, Gonir More | Kazirhat Notun Stand, Gonir More Stand)</span></td>
+                    <td class="mc2" data-market-name="Majhirghat"
+                      data-market-details="Majhirghat Bus Stand, Rupbahar Hat, Majhighat (Rupbahar Hat Bazar, Gonir More | Kazirhat Notun Stand, Gonir More Stand)">
+                      Majhirghat</td>
                   </tr>
                   <!-- Third set of markets -->
                   <tr>
-                    <td class="mc1">Shibchar Sadar 2 <span class="tooltip">Kutubpur Bazar, Chak Bazar, Kacha Bazar
-                        (Delowar Bepari Hat | Golar Bazar, Kumerpar Bazar, Komlapur Bazar)</span></td>
+                    <td class="mc1" data-market-name="Shibchar Sadar 2"
+                      data-market-details="Kutubpur Bazar, Chak Bazar, Kacha Bazar (Delowar Bepari Hat | Golar Bazar, Kumerpar Bazar, Komlapur Bazar)">
+                      Shibchar Sadar 2</td>
                     <td class="o1" rowspan="4">Monday</td>
                     <td class="d1" rowspan="4">Tuesday</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Shibchar Sadar 3 <span class="tooltip">71 Road, Sarak Road, Shibrakandi More, Kajir
-                        Dokan, Modirapot, Mohoripotti</span></td>
+                    <td class="mc1" data-market-name="Shibchar Sadar 3"
+                      data-market-details="71 Road, Sarak Road, Shibrakandi More, Kajir Dokan, Modirapot, Mohoripotti">
+                      Shibchar Sadar 3</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Zajira 1 <span class="tooltip">TNT, Hos. Road, Thana Road, Bank Road, Godown More
-                        (Gorom Bazar, Palererhat Bazar | Akon Kandi, Durbaranga Bazar)</span></td>
+                    <td class="mc1" data-market-name="Zajira 1"
+                      data-market-details="TNT, Hos. Road, Thana Road, Bank Road, Godown More (Gorom Bazar, Palererhat Bazar | Akon Kandi, Durbaranga Bazar)">
+                      Zajira 1</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Zajira 2 <span class="tooltip">Puran Bazar, Puran Bazar Bus Stand, Son Khola (Sofi
-                        Kajir More, Pachurbari Kandi | Mohorkhari Kandi, Bilaspur)</span></td>
+                    <td class="mc1" data-market-name="Zajira 2"
+                      data-market-details="Puran Bazar, Puran Bazar Bus Stand, Son Khola (Sofi Kajir More, Pachurbari Kandi | Mohorkhari Kandi, Bilaspur)">
+                      Zajira 2</td>
                   </tr>
                   <!-- Fourth set of markets -->
                   <tr>
-                    <td class="mc2">Banglabazar <span class="tooltip">Nodipar, Kadipur Bazar, Bangalabazar (Munshir Hat,
-                        Puran Ghat, Shikdar Market | Bailj Bridge, Simana, Jinar Get, Boat Ghor)</span></td>
+                    <td class="mc2" data-market-name="Banglabazar"
+                      data-market-details="Nodipar, Kadipur Bazar, Bangalabazar (Munshir Hat, Puran Ghat, Shikdar Market | Bailj Bridge, Simana, Jinar Get, Boat Ghor)">
+                      Banglabazar</td>
                     <td class="o2" rowspan="4">Tuesday</td>
                     <td class="d2" rowspan="4">Wednesday</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Naodoba <span class="tooltip">Anondo Bazar, Naodoba Bazar (Dogni Bazar, Bongo Market
-                        | Club More, Saheb Bazar)</span></td>
+                    <td class="mc2" data-market-name="Naodoba"
+                      data-market-details="Anondo Bazar, Naodoba Bazar (Dogni Bazar, Bongo Market | Club More, Saheb Bazar)">
+                      Naodoba</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Chotokutubpur <span class="tooltip">Badhadpur Stand, Chotokutubpur Choto More, Bailj
-                        Bazar, Pally Bazar, Puran Bazar (Chotokutubpur Bazar | Munshir Bazar)</span></td>
+                    <td class="mc2" data-market-name="Chotokutubpur"
+                      data-market-details="Badhadpur Stand, Chotokutubpur Choto More, Bailj Bazar, Pally Bazar, Puran Bazar (Chotokutubpur Bazar | Munshir Bazar)">
+                      Chotokutubpur</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Matborchar <span class="tooltip">Matborchar Bazar, Nasirier More, Matberchar Hat
-                        (Shikdar Hat, Shilmir Toll Bazar | Loptir Kandi, Singarer Bazar)</span></td>
+                    <td class="mc2" data-market-name="Matborchar"
+                      data-market-details="Matborchar Bazar, Nasirier More, Matberchar Hat (Shikdar Hat, Shilmir Toll Bazar | Loptir Kandi, Singarer Bazar)">
+                      Matborchar</td>
                   </tr>
                   <!-- Fifth set of markets -->
                   <tr>
-                    <td class="mc1">Boharatola <span class="tooltip">Sotrapar, Boharatola, Singapur, Saheber Hat,
-                        Shakpur Stand (Shakpur Bus Stand | Kolotola, Vennatola, Bazitpur)</span></td>
+                    <td class="mc1" data-market-name="Boharatola"
+                      data-market-details="Sotrapar, Boharatola, Singapur, Saheber Hat, Shakpur Stand (Shakpur Bus Stand | Kolotola, Vennatola, Bazitpur)">
+                      Boharatola</td>
                     <td class="o1" rowspan="4">Wednesday</td>
                     <td class="d1" rowspan="4">Thursday</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Shakpur <span class="tooltip">Shakpur Bazar, Shakpur Main Road (Hosenert Hat,
-                        Chaskar Bazar | Sundartola Bazar, Haiderabad Bazar)</span></td>
+                    <td class="mc1" data-market-name="Shakpur"
+                      data-market-details="Shakpur Bazar, Shakpur Main Road (Hosenert Hat, Chaskar Bazar | Sundartola Bazar, Haiderabad Bazar)">
+                      Shakpur</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Kazirhat <span class="tooltip">Kazirhat Main Road, Kazirhat Bazar</span></td>
+                    <td class="mc1" data-market-name="Kazirhat"
+                      data-market-details="Kazirhat Main Road, Kazirhat Bazar">Kazirhat</td>
                   </tr>
                   <tr>
-                    <td class="mc1">Ganganagar <span class="tooltip">Jog Nagor Bazar, Ganganagar Bazar, Law Khola Bazar
-                        (Law Khola Road | Law Khola Bridge)</span></td>
+                    <td class="mc1" data-market-name="Ganganagar"
+                      data-market-details="Jog Nagor Bazar, Ganganagar Bazar, Law Khola Bazar (Law Khola Road | Law Khola Bridge)">
+                      Ganganagar</td>
                   </tr>
                   <!-- Sixth set of markets -->
                   <tr>
-                    <td class="mc2">Shibchar Sadar 1 <span class="tooltip">Shamolir More, Powro Market, TNT More (D.C
-                        Road, Jadurachar Road | Sasthokhoni Road)</span></td>
+                    <td class="mc2" data-market-name="Shibchar Sadar 1"
+                      data-market-details="Shamolir More, Powro Market, TNT More (D.C Road, Jadurachar Road | Sasthokhoni Road)">
+                      Shibchar Sadar 1</td>
                     <td class="o2" rowspan="4">Thursday</td>
                     <td class="d2" rowspan="4">Saturday</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Shibchar Sadar 2 <span class="tooltip">Kutubpur Bazar, Chak Bazar, Kacha Bazar
-                        (Delowar Bepari Hat | Golar Bazar, Kumerpar Bazar, Komlapur Bazar)</span></td>
+                    <td class="mc2" data-market-name="Shibchar Sadar 2"
+                      data-market-details="Kutubpur Bazar, Chak Bazar, Kacha Bazar (Delowar Bepari Hat | Golar Bazar, Kumerpar Bazar, Komlapur Bazar)">
+                      Shibchar Sadar 2</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Shibchar Sadar 3 <span class="tooltip">School More, Thana Road, Sadipur Bazar,
-                        Banbataola (Bridge Ghat | Khajazar Deg)</span></td>
+                    <td class="mc2" data-market-name="Shibchar Sadar 3"
+                      data-market-details="71 Road, Sarak Road, Shibrakandi More, Kajir Dokan, Modirapot, Mohoripotti">
+                      Shibchar Sadar 3</td>
                   </tr>
                   <tr>
-                    <td class="mc2">Shibchar Sadar 4 <span class="tooltip">Market 4</span></td>
+                    <td class="mc2" data-market-name="Shibchar Sadar 4"
+                      data-market-details="College More, Thana Road, Sadipur Bazar, Banbataola (Bridge Ghat | Khajazar Deg)">
+                      Shibchar Sadar 4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Structure -->
+    <div id="marketModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="marketName"></h2>
+        <p id="marketDetails"></p>
+      </div>
+    </div>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Services</h2>
+          <p>Order & delivery chart</p>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="table-responsive" data-aos="zoom-in">
+              <table class="table">
+                <!-- Table header -->
+                <thead>
+                  <tr>
+                    <th>Market Name</th>
+                    <th>Order</th>
+                    <th>Delivery</th>
+                  </tr>
+                </thead>
+                <!-- Table body -->
+                <tbody>
+                  <!-- First set of markets -->
+                  <tr>
+                    <td class="mc1" data-market-name="Surjonagar"
+                      data-market-details="Surjonagar Bazar, Dattapara Bazar, Naya Bazar, Utrail Hat, Utrail Ghat (Mogra Bazar | Gp Tower)">
+                      Surjonagar</td>
+                    <td class="o1" rowspan="4">Saturday</td>
+                    <td class="d1" rowspan="4">Sunday</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Sheruail"
+                      data-market-details="Shiruail Bazar, Bagra Bazar, Kobirajpur Bazar, Bagmara Stand, Hazir More (Kobirajpur Police Fari, Kobirajpur Hos. Road)">
+                      Sheruail</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Chanderchar"
+                      data-market-details="Chanderchar Bazar (Vandari, Tengramari | Jogdher Math)">Chanderchar</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Bhadrashan"
+                      data-market-details="Jel Khanar More, School Get, Bhadrashan Bazar (Dokhin Crock Chor | Gopalpur Bazar)">
+                      Bhadrashan</td>
+                  </tr>
+                  <!-- Second set of markets -->
+                  <tr>
+                    <td class="mc2" data-market-name="Bondorkhola"
+                      data-market-details="Badhadpur Bazar, Bondorkhola Bazar, Bondorkhola Stand, Khaser Hat, Sonaratori, Matborchar Road (Hakim Matbor Hat)">
+                      Bondorkhola</td>
+                    <td class="o2" rowspan="4">Sunday</td>
+                    <td class="d2" rowspan="4">Monday</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Panchar"
+                      data-market-details="Panchar Bazar, Jamaitusunnah, Thakur Bazar, Panchar Main Road, Kacha Bazar, Sonaratori">
+                      Panchar</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Kazirhat"
+                      data-market-details="Kazirhat Main Road, Kazirhat Bazar">Kazirhat</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Majhirghat"
+                      data-market-details="Majhirghat Bus Stand, Rupbahar Hat, Majhighat (Rupbahar Hat Bazar, Gonir More | Kazirhat Notun Stand, Gonir More Stand)">
+                      Majhirghat</td>
+                  </tr>
+                  <!-- Third set of markets -->
+                  <tr>
+                    <td class="mc1" data-market-name="Shibchar Sadar 2"
+                      data-market-details="Kutubpur Bazar, Chak Bazar, Kacha Bazar (Delowar Bepari Hat | Golar Bazar, Kumerpar Bazar, Komlapur Bazar)">
+                      Shibchar Sadar 2</td>
+                    <td class="o1" rowspan="4">Monday</td>
+                    <td class="d1" rowspan="4">Tuesday</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Shibchar Sadar 3"
+                      data-market-details="71 Road, Sarak Road, Shibrakandi More, Kajir Dokan, Modirapot, Mohoripotti">
+                      Shibchar Sadar 3</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Zajira 1"
+                      data-market-details="TNT, Hos. Road, Thana Road, Bank Road, Godown More (Gorom Bazar, Palererhat Bazar | Akon Kandi, Durbaranga Bazar)">
+                      Zajira 1</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Zajira 2"
+                      data-market-details="Puran Bazar, Puran Bazar Bus Stand, Son Khola (Sofi Kajir More, Pachurbari Kandi | Mohorkhari Kandi, Bilaspur)">
+                      Zajira 2</td>
+                  </tr>
+                  <!-- Fourth set of markets -->
+                  <tr>
+                    <td class="mc2" data-market-name="Banglabazar"
+                      data-market-details="Nodipar, Kadipur Bazar, Bangalabazar (Munshir Hat, Puran Ghat, Shikdar Market | Bailj Bridge, Simana, Jinar Get, Boat Ghor)">
+                      Banglabazar</td>
+                    <td class="o2" rowspan="4">Tuesday</td>
+                    <td class="d2" rowspan="4">Wednesday</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Naodoba"
+                      data-market-details="Anondo Bazar, Naodoba Bazar (Dogni Bazar, Bongo Market | Club More, Saheb Bazar)">
+                      Naodoba</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Chotokutubpur"
+                      data-market-details="Badhadpur Stand, Chotokutubpur Choto More, Bailj Bazar, Pally Bazar, Puran Bazar (Chotokutubpur Bazar | Munshir Bazar)">
+                      Chotokutubpur</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Matborchar"
+                      data-market-details="Matborchar Bazar, Nasirier More, Matberchar Hat (Shikdar Hat, Shilmir Toll Bazar | Loptir Kandi, Singarer Bazar)">
+                      Matborchar</td>
+                  </tr>
+                  <!-- Fifth set of markets -->
+                  <tr>
+                    <td class="mc1" data-market-name="Boharatola"
+                      data-market-details="Sotrapar, Boharatola, Singapur, Saheber Hat, Shakpur Stand (Shakpur Bus Stand | Kolotola, Vennatola, Bazitpur)">
+                      Boharatola</td>
+                    <td class="o1" rowspan="4">Wednesday</td>
+                    <td class="d1" rowspan="4">Thursday</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Shakpur"
+                      data-market-details="Shakpur Bazar, Shakpur Main Road (Hosenert Hat, Chaskar Bazar | Sundartola Bazar, Haiderabad Bazar)">
+                      Shakpur</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Kazirhat"
+                      data-market-details="Kazirhat Main Road, Kazirhat Bazar">Kazirhat</td>
+                  </tr>
+                  <tr>
+                    <td class="mc1" data-market-name="Ganganagar"
+                      data-market-details="Jog Nagor Bazar, Ganganagar Bazar, Law Khola Bazar (Law Khola Road | Law Khola Bridge)">
+                      Ganganagar</td>
+                  </tr>
+                  <!-- Sixth set of markets -->
+                  <tr>
+                    <td class="mc2" data-market-name="Shibchar Sadar 1"
+                      data-market-details="Shamolir More, Powro Market, TNT More (D.C Road, Jadurachar Road | Sasthokhoni Road)">
+                      Shibchar Sadar 1</td>
+                    <td class="o2" rowspan="4">Thursday</td>
+                    <td class="d2" rowspan="4">Saturday</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Shibchar Sadar 2"
+                      data-market-details="Kutubpur Bazar, Chak Bazar, Kacha Bazar (Delowar Bepari Hat | Golar Bazar, Kumerpar Bazar, Komlapur Bazar)">
+                      Shibchar Sadar 2</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Shibchar Sadar 3"
+                      data-market-details="71 Road, Sarak Road, Shibrakandi More, Kajir Dokan, Modirapot, Mohoripotti">
+                      Shibchar Sadar 3</td>
+                  </tr>
+                  <tr>
+                    <td class="mc2" data-market-name="Shibchar Sadar 4"
+                      data-market-details="College More, Thana Road, Sadipur Bazar, Banbataola (Bridge Ghat | Khajazar Deg)">
+                      Shibchar Sadar 4</td>
                   </tr>
                 </tbody>
               </table>

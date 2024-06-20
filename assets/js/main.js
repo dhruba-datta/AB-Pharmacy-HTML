@@ -461,29 +461,31 @@
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    var tableCells = document.querySelectorAll("td");
+    var modal = document.getElementById("marketModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    var tableCells = document.querySelectorAll("td[data-market-name]");
 
     tableCells.forEach(function (cell) {
       cell.addEventListener("click", function () {
-        var tooltip = this.querySelector(".tooltip");
+        var marketName = this.getAttribute("data-market-name");
+        var marketDetails = this.getAttribute("data-market-details");
 
-        // Hide other tooltips
-        document.querySelectorAll(".tooltip").forEach(function (tip) {
-          if (tip !== tooltip) {
-            tip.parentElement.classList.remove("clicked");
-            tip.style.display = "none";
-          }
-        });
+        document.getElementById("marketName").textContent = marketName;
+        document.getElementById("marketDetails").textContent = marketDetails;
 
-        // Toggle the clicked tooltip
-        if (tooltip.style.display === "block") {
-          tooltip.style.display = "none";
-          this.classList.remove("clicked");
-        } else {
-          tooltip.style.display = "block";
-          this.classList.add("clicked");
-        }
+        modal.style.display = "block";
       });
     });
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
   });
 })();
