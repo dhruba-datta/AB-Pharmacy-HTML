@@ -459,4 +459,31 @@
   document.addEventListener("DOMContentLoaded", () => {
     updateCart();
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var tableCells = document.querySelectorAll("td");
+
+    tableCells.forEach(function (cell) {
+      cell.addEventListener("click", function () {
+        var tooltip = this.querySelector(".tooltip");
+
+        // Hide other tooltips
+        document.querySelectorAll(".tooltip").forEach(function (tip) {
+          if (tip !== tooltip) {
+            tip.parentElement.classList.remove("clicked");
+            tip.style.display = "none";
+          }
+        });
+
+        // Toggle the clicked tooltip
+        if (tooltip.style.display === "block") {
+          tooltip.style.display = "none";
+          this.classList.remove("clicked");
+        } else {
+          tooltip.style.display = "block";
+          this.classList.add("clicked");
+        }
+      });
+    });
+  });
 })();
