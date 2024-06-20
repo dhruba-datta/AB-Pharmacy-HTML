@@ -128,63 +128,10 @@
       </div>
     </div>
 
-    <!-- Modal for entering shop name and address -->
-    <div class="modal fade" id="userDetailsModal" tabindex="-1" aria-labelledby="userDetailsModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="userDetailsModalLabel">Enter Your Shop Details</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-            </button>
-          </div>
-          <div class="modal-body">
-            <form id="userDetailsForm">
-              <div class="mb-3">
-                <label for="shopName" class="form-label">Shop Name</label>
-                <input type="text" class="form-control" id="shopName" required>
-              </div>
-              <div class="mb-3">
-                <label for="shopAddress" class="form-label">Address</label>
-                <select class="form-select" id="shopAddress" required>
-                  <option value="">Select an address</option>
-                  <option value="Banglabazar">Banglabazar</option>
-                  <option value="Bhadrashan">Bhadrashan</option>
-                  <option value="Boharatola">Boharatola</option>
-                  <option value="Bondorkhola">Bondorkhola</option>
-                  <option value="Chanderchar">Chanderchar</option>
-                  <option value="Choto Kutubpur">Choto Kutubpur</option>
-                  <option value="Ganganagar">Ganganagar</option>
-                  <option value="Kazirhat">Kazirhat</option>
-                  <option value="Majhirghat">Majhirghat</option>
-                  <option value="Matborchar">Matborchar</option>
-                  <option value="Naodoba">Naodoba</option>
-                  <option value="Panchar">Panchar</option>
-                  <option value="Shakpur">Shakpur</option>
-                  <option value="Sheruail">Sheruail</option>
-                  <option value="Shibchar Sadar 1">Shibchar Sadar 1</option>
-                  <option value="Shibchar Sadar 2">Shibchar Sadar 2</option>
-                  <option value="Shibchar Sadar 3">Shibchar Sadar 3</option>
-                  <option value="Shibchar Sadar 4">Shibchar Sadar 4</option>
-                  <option value="Surjonagar">Surjonagar</option>
-                  <option value="Zajira 1">Zajira 1</option>
-                  <option value="Zajira 2">Zajira 2</option>
-
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary">Save Details</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
         <div class="section-title" data-aos="zoom-out">
           <h2>Products</h2>
           <p>WHAT WE OFFER</p>
@@ -211,12 +158,14 @@
                 <h4>Sergel 20mg Cap</h4>
                 <p>Esomeprazole 100s Box, MRP: 700 </p>
                 <span>Price: &#2547;595 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -229,12 +178,14 @@
                 <h4>Losectil 20mg Cap </h4>
                 <p>Omeprazole 120s Box, MRP: 600 </p>
                 <span>Price: &#2547;475 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -247,12 +198,14 @@
                 <h4>Seclo 20mg Cap </h4>
                 <p>Omeprazole 120s Box, MRP: 600 </p>
                 <span>Price: &#2547;530 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -265,12 +218,14 @@
                 <h4>Finix 20mg Tab </h4>
                 <p>Rabeprazole 140s Box, MRP: 980 </p>
                 <span>Price: &#2547;725 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -283,12 +238,14 @@
                 <h4>Monas 10mg Tab </h4>
                 <p>Montelukast 30s Box, MRP: 525 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -301,12 +258,14 @@
                 <h4>Montene 10mg Tab </h4>
                 <p>Montelukast 30s Box, MRP: 480 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -319,12 +278,14 @@
                 <h4>Tufnil 200mg Tab </h4>
                 <p>Tolfenamic Acid 60s Box, MRP: 600 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -337,12 +298,14 @@
                 <h4>Etoricoxib 60mg Tab </h4>
                 <p>Albion 40s Box, MRP: 280 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -355,12 +318,14 @@
                 <h4>Etoricoxib 90mg Tab </h4>
                 <p>Albion 30s Box, MRP: 360 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -373,12 +338,14 @@
                 <h4>Etoricoxib 120mg Tab </h4>
                 <p>Albion 120s Box, MRP: 280 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -394,12 +361,14 @@
                 <h4>Helfit Tab </h4>
                 <p>Botanic Lab. MRP: 360 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -412,12 +381,14 @@
                 <h4>Varex Syp </h4>
                 <p>Winco Ayu. 1s, MRP: 90 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -430,12 +401,14 @@
                 <h4>Varex Plus Syp </h4>
                 <p>Winco Ayu. 1s, MRP: 100 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -448,12 +421,14 @@
                 <h4>Plavit Syp </h4>
                 <p>Vitamin Syp 450ml 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -466,12 +441,14 @@
                 <h4>Pudina Syp </h4>
                 <p>Vitamin Syp 450ml 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -484,12 +461,14 @@
                 <h4>SEB-S Syp </h4>
                 <p>Surma Lab. 450ml 1s, MRP: 360 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -502,12 +481,14 @@
                 <h4>Puvit Syp </h4>
                 <p>Vitamin Syp 450ml 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -520,12 +501,14 @@
                 <h4>Viagin Syp </h4>
                 <p>Vitamin Syp 450ml 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -538,12 +521,14 @@
                 <h4>Zincin Syp 100</h4>
                 <p>Zincin Syp 100ml 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -556,12 +541,14 @@
                 <h4>Zincin Syp 50</h4>
                 <p>Zincin Syp 50ml 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -576,12 +563,14 @@
                 <h4>Roller Bandage 4" SP </h4>
                 <p>Gawsia Co. 12s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -594,12 +583,14 @@
                 <h4>Roller Bandage 6" SP</h4>
                 <p>Gawsia Co. 12s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -612,12 +603,14 @@
                 <h4>Roller Bandage 4" </h4>
                 <p>SB Co. 12s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -630,12 +623,14 @@
                 <h4>Roller Bandage 6" </h4>
                 <p>SB Co. 12s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -648,12 +643,14 @@
                 <h4>Gauze SP</h4>
                 <p>Gawsia Co. 12s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -666,12 +663,14 @@
                 <h4>Gauze </h4>
                 <p>SB Co. 12s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -684,12 +683,14 @@
                 <h4>Syringe 3cc </h4>
                 <p>JMI Co. 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -702,12 +703,14 @@
                 <h4>Syringe 5cc </h4>
                 <p>JMI Co. 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -720,12 +723,14 @@
                 <h4>Syringe 100IU </h4>
                 <p>RFL Co, 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -738,12 +743,14 @@
                 <h4>Saline Set </h4>
                 <p>Incepta Ph. 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -756,12 +763,14 @@
                 <h4>Cotton 25gm </h4>
                 <p> MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -774,12 +783,14 @@
                 <h4>Cotton 200gm </h4>
                 <p> MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -792,12 +803,14 @@
                 <h4>Fast Aid Band </h4>
                 <p>JMI Co. 100s, MRP: 200 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -810,12 +823,14 @@
                 <h4>Neostrip </h4>
                 <p>Neoplast Co. 100s, MRP: 200 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -828,12 +843,14 @@
                 <h4>Greenpass </h4>
                 <p>China. 10s, MRP: 30 </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -846,12 +863,14 @@
                 <h4>P Test </h4>
                 <p>P Test 10s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -864,12 +883,14 @@
                 <h4>Good News </h4>
                 <p>P Test 10s, MRP: 700 </p>
                 <span>Price: &#2547;80 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -882,12 +903,14 @@
                 <h4>Micropor 1" </h4>
                 <p>JMS Co. Japan 1s, MRP: 70 </p>
                 <span>Price: &#2547;50 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -900,12 +923,14 @@
                 <h4>Micropor 2" </h4>
                 <p>JMS Co. Japan 1s, MRP: 130 </p>
                 <span>Price: &#2547;98 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -918,12 +943,14 @@
                 <h4>Hot Water Bag </h4>
                 <p>China 1s, MRP: </p>
                 <span>Price: &#2547; </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -939,12 +966,14 @@
                 <h4>Lactogen 1 180</h4>
                 <p> 0-6 month 180gm 1s, MRP: 310 </p>
                 <span>Price: &#2547;292 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -957,12 +986,14 @@
                 <h4>Lactogen 1 350</h4>
                 <p> 0-6 month 350gm 1s, MRP: 650 </p>
                 <span>Price: &#2547;615 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -975,12 +1006,14 @@
                 <h4>Lactogen 1 400</h4>
                 <p> 0-6 month 400gm 1s, MRP: 820 </p>
                 <span>Price: &#2547;772 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -993,12 +1026,14 @@
                 <h4>Lactogen 2 180</h4>
                 <p>6-12 month 180gm 1s, MRP: 330 </p>
                 <span>Price: &#2547;310 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1011,12 +1046,14 @@
                 <h4>Lactogen 2 350</h4>
                 <p>6-12 month 350gm 1s, MRP: 670 </p>
                 <span>Price: &#2547;634 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1030,12 +1067,14 @@
                 <h4>Lactogen 2 400</h4>
                 <p>6-12 month 400gm 1s, MRP: 820 </p>
                 <span>Price: &#2547;772 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1048,12 +1087,14 @@
                 <h4>Lactogen 3 180</h4>
                 <p>12-24 month 180gm 1s, MRP: 330 </p>
                 <span>Price: &#2547;310 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1066,12 +1107,14 @@
                 <h4>Lactogen 3 350</h4>
                 <p>12-24 month 350gm 1s, MRP: 670 </p>
                 <span>Price: &#2547;634 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1084,12 +1127,14 @@
                 <h4>Lactogen 3 400</h4>
                 <p>12-24 month 400gm 1s, MRP: 820 </p>
                 <span>Price: &#2547;772 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1102,12 +1147,14 @@
                 <h4>Cerelac 1 3f </h4>
                 <p>06-24 mth 350gm 1s, MRP: 410 </p>
                 <span>Price: &#2547;387 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1121,12 +1168,14 @@
                 <h4>Cerelac 2 Apl </h4>
                 <p>08-24 mth 350gm 1s, MRP: 425 </p>
                 <span>Price: &#2547;400 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1139,12 +1188,14 @@
                 <h4>Cerelac 3 4f </h4>
                 <p>10-24 mth 350gm 1s MRP: 450 </p>
                 <span>Price: &#2547;423 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1157,12 +1208,14 @@
                 <h4>Cerelac 4 Chk </h4>
                 <p>12-24 mth 350gm 1s, MRP: 480 </p>
                 <span>Price: &#2547;453 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1175,12 +1228,14 @@
                 <h4>Cerelac 5 5f </h4>
                 <p>18-36 mth 350gm 1s, MRP: 525 </p>
                 <span>Price: &#2547;494 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1193,12 +1248,14 @@
                 <h4>Pushti Mix </h4>
                 <p>6mth - 5Yea 30s, MRP: 150 </p>
                 <span>Price: &#2547;120 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1212,12 +1269,14 @@
                 <h4>Nido 1+ </h4>
                 <p>12-36 mth 350gm 1s, MRP: 480 </p>
                 <span>Price: &#2547;453 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1230,12 +1289,14 @@
                 <h4>Nido 3+ </h4>
                 <p>36-60 mth 350gm 1s, MRP: 480 </p>
                 <span>Price: &#2547;453 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1248,12 +1309,14 @@
                 <h4>Nido Fortigrow </h4>
                 <p>aft 5yea 350gm 1s, MRP: 400 </p>
                 <span>Price: &#2547;373 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1266,12 +1329,14 @@
                 <h4>Koko Krunch 150</h4>
                 <p>Nutrismart 150gm 1s, MRP: 250 </p>
                 <span>Price: &#2547;227 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -1284,15 +1349,18 @@
                 <h4>Koko Krunch 300</h4>
                 <p>Nutrismart 300gm 1s, MRP: 450 </p>
                 <span>Price: &#2547;409 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
+
 
 
           <!-- Other Items -->
@@ -1303,24 +1371,24 @@
               </div>
               <div class="member-info">
                 <h4>Others</h4>
-                <p>This is the basic description </p>
+                <p>This is the basic description</p>
                 <span>Price: &#2547;150 </span>
-                <div class="quantity">
-                  <button class="btn btn-sm btn-minus">-</button>
-                  <input type="text" class="count" value="1">
-                  <button class="btn btn-sm btn-plus">+</button>
+                <div class="quantity" style="display: none;">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary btn-minus">-</button>
+                    <input type="text" class="form-control count" value="1">
+                    <button class="btn btn-outline-secondary btn-plus">+</button>
+                  </div>
                 </div>
-                <button class="product" data-out-of-stock="false">Add to Cart</button>
+                <button class="product btn btn-primary" data-out-of-stock="false">Add to Cart</button>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
-    <!-- End Portfolio Section -->
 
+    <!-- End Portfolio Section -->
 
 
     <!-- ======= Services Section ======= -->

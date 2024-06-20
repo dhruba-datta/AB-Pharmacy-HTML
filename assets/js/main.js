@@ -257,25 +257,14 @@
 
   // Array to store selected products and quantities
   let cartItems = [];
-  let userDetails = { name: "", address: "" }; // Object to store user details
-  let userDetailsEntered = false; // Flag to check if user details have been entered
-  let tempProduct = null; // Temporary variable to store product details
 
   // Function to add items to the cart
   function addToCart(productName, quantity) {
-    // Check if user details are already provided
-    if (!userDetailsEntered) {
-      // Store product details temporarily
-      tempProduct = { productName, quantity };
-      getUserDetails(); // Prompt user to enter details
-      return; // Exit function without adding item to cart
-    }
-
-    // If user details are entered, add the item to the cart
+    // Add the item to the cart directly
     addItemToCart(productName, quantity);
   }
 
-  // Function to add item to cart after user details are entered
+  // Function to add item to cart
   function addItemToCart(productName, quantity) {
     // Check if the product already exists in the cart
     const existingItem = cartItems.find(
@@ -289,40 +278,6 @@
       cartItems.push({ productName, quantity: parseInt(quantity) });
     }
     updateCart();
-  }
-
-  // Function to get user details using Bootstrap modal
-  function getUserDetails() {
-    const userDetailsModal = new bootstrap.Modal(
-      document.getElementById("userDetailsModal")
-    );
-    const form = document.getElementById("userDetailsForm");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      const shopName = document.getElementById("shopName").value.trim();
-      const shopAddress = document.getElementById("shopAddress").value.trim();
-
-      if (!shopName || !shopAddress) {
-        alert("Shop Name and Address Are Required!");
-        return; // Prevent closing modal if details are missing
-      }
-
-      userDetails.name = shopName;
-      userDetails.address = shopAddress;
-      userDetailsEntered = true; // Set the flag to true after entering details
-      userDetailsModal.hide(); // Close the modal
-
-      // After details are entered, check if there's a pending product to add
-      if (tempProduct) {
-        addItemToCart(tempProduct.productName, tempProduct.quantity);
-        tempProduct = null; // Clear temporary product details
-      }
-
-      // Now continue with adding items to the cart or other operations
-    });
-
-    userDetailsModal.show();
   }
 
   // Function to update the cart content and notification count
@@ -339,9 +294,9 @@
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-            <p>${item.productName} = ${item.quantity}</p>
-            <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-            `;
+          <p>${item.productName} = ${item.quantity}</p>
+          <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+          `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
@@ -384,6 +339,10 @@
     button.addEventListener("click", () => {
       const input = button.parentElement.querySelector(".count");
       input.value = parseInt(input.value) + 1;
+      const productName = button
+        .closest(".member-info")
+        .querySelector("h4").innerText;
+      updateCartItem(productName, input.value);
     });
   });
 
@@ -393,8 +352,25 @@
       const input = button.parentElement.querySelector(".count");
       input.value =
         parseInt(input.value) - 1 > 0 ? parseInt(input.value) - 1 : 1;
+      const productName = button
+        .closest(".member-info")
+        .querySelector("h4").innerText;
+      updateCartItem(productName, input.value);
     });
   });
+
+  // Update cart item quantity
+  function updateCartItem(productName, quantity) {
+    const existingItem = cartItems.find(
+      (item) => item.productName === productName
+    );
+    if (existingItem) {
+      existingItem.quantity = parseInt(quantity);
+    } else {
+      cartItems.push({ productName, quantity: parseInt(quantity) });
+    }
+    updateCart();
+  }
 
   // Handle Add to Cart button click in product section
   document.querySelectorAll(".product").forEach((button) => {
@@ -407,16 +383,17 @@
       button.addEventListener("click", (e) => {
         e.preventDefault();
         const productName = button.parentElement.querySelector("h4").innerText;
-        const quantity = button.parentElement.querySelector(".count").value;
+        const quantityDiv = button.parentElement.querySelector(".quantity");
+        const quantityInput = quantityDiv.querySelector(".count");
 
-        // Check if user details are entered
-        if (userDetailsEntered) {
-          addToCart(productName, quantity);
-        } else {
-          // Store the product details temporarily
-          tempProduct = { productName, quantity };
-          getUserDetails(); // Prompt user to enter details
-        }
+        // Show the quantity selection tool
+        quantityDiv.style.display = "block";
+        // Remove the "Add to Cart" button
+        button.style.display = "none";
+
+        // Add the item to the cart with the initial quantity
+        const quantity = quantityInput.value;
+        addToCart(productName, quantity);
       });
     }
   });
@@ -460,6 +437,7 @@
     updateCart();
   });
 
+  // table popup
   document.addEventListener("DOMContentLoaded", function () {
     var modal = document.getElementById("marketModal");
     var span = document.getElementsByClassName("close")[0];
