@@ -628,7 +628,7 @@ section {
 /* Different colors for each column */
 .table th:nth-child(1),
 .table td:nth-child(1) {
-  background-color: #f7dddd;
+  background-color: #91ddcf;
   position: relative;
 }
 
@@ -644,6 +644,30 @@ section {
   position: relative;
 }
 
+
+.mc1{
+  background-color: #BFF6C3 !important;
+}
+
+.mc2{
+  background-color: #CAF4FF !important;
+}
+
+.o1{
+  background-color: #BFF6C3 !important;
+}
+
+.o2{
+  background-color: #CAF4FF !important;
+}
+
+.d1{
+  background-color: #BFF6C3 !important;
+}
+
+.d2{
+  background-color: #CAF4FF !important;
+}
 
 /*--------------------------------------------------------------
 # Portfolio
