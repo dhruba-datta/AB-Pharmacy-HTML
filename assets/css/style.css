@@ -982,7 +982,7 @@ button.product.out-of-stock {
 .cart-container {
   background-color: white;
   width: 100%; /* Full page width */
-  max-width: 800px; /* Adjust max-width to make the cart narrower */
+  max-width: 600px; /* Adjust max-width to make the cart narrower */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -1025,7 +1025,7 @@ button.product.out-of-stock {
 
 .cart-items {
   text-align: center; /* Align content center */
-  max-height: 300px;
+  max-height: 600px;
   overflow-y: auto;
   padding-left: 0;
   margin-bottom: 20px;
@@ -1084,11 +1084,7 @@ button.product.out-of-stock {
 }
 
 /* New Styles for Modern Look */
-.cart-item p.item-name::before {
-  content: attr(data-serial) ". ";
-  font-weight: bold;
-  margin-right: 5px;
-}
+
 
 .cart-item .item-quantity {
   text-align: center;
