@@ -1083,8 +1083,8 @@ button.product.out-of-stock {
 }
 
 .cart-content hr {
-  border: 0;
-  border-top: 1px solid #eee;
+  border: 10px;
+  border-top: 3px solid #004f50; /* Increase the border-top width */
   margin-top: 5px;
   margin-bottom: 15px;
   color: #004f50;
@@ -1101,7 +1101,7 @@ button.product.out-of-stock {
   display: grid;
   grid-template-columns: 2fr 2fr 1fr auto;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding: 5px 5px; /* Add padding for spacing */
   gap: 10px; /* Add gap between columns */
 }
