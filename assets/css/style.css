@@ -1049,8 +1049,7 @@ button.product.out-of-stock {
 
 .cart-container {
   background-color: white;
-  width: 100%; /* Full page width */
-  max-width: 600px; /* Adjust max-width to make the cart narrower */
+  width: 90%; /* Full page width */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
