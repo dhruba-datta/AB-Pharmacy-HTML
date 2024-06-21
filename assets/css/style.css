@@ -641,39 +641,108 @@ section {
 
 /* Modal styling */
 .modal {
-  display: none; 
-  position: fixed; 
-  padding-top: 100px; 
+  display: none;
+  position: fixed;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fff;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 80%;
+  max-width: 600px;
+  position: relative; /* Added to position close button */
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #bbb;
+  font-size: 24px;
   font-weight: bold;
+  transition: color 0.2s;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
+
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #015354;
+  font-weight: 600;
+}
+
+.form-label {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.form-control, .form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #015354;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.button-container {
+  text-align: center; /* Center the button */
+}
+
+button[type="submit"] {
+  background-color: #015354;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 12px;
+}
+
+button[type="submit"]:hover {
+  background-color: #013e3f;
+}
+
 
 
 /*--------------------------------------------------------------
