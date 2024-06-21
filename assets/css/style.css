@@ -1094,7 +1094,6 @@ button.product.out-of-stock {
   text-align: center; /* Align content center */
   max-height: 500px;
   overflow-y: auto;
-  padding-left: 0;
   margin-bottom: 20px;
 }
 
@@ -1103,8 +1102,8 @@ button.product.out-of-stock {
   grid-template-columns: 2fr 2fr 1fr auto;
   align-items: center;
   margin-bottom: 10px;
-  padding: 10px 20px; /* Add padding for spacing */
-  gap: 20px; /* Add gap between columns */
+  padding: 5px 5px; /* Add padding for spacing */
+  gap: 10px; /* Add gap between columns */
 }
 
 .cart-item p {
