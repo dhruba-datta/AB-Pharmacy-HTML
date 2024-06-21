@@ -296,15 +296,13 @@
         const cartItemElement = document.createElement("div");
         cartItemElement.classList.add("cart-item");
         cartItemElement.innerHTML = `
-          <p class="item-name" data-serial="${index + 1}">${
-          item.productName
-        }</p>
-          <p class="item-quantity">${item.quantity} x ৳${item.price.toFixed(
+        <p class="item-name" data-serial="${index + 1}">${item.productName}</p>
+        <p class="item-quantity">${item.quantity} x ৳${item.price.toFixed(
           2
         )}</p>
-          <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
-          <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
-        `;
+        <p class="item-price">৳${(item.price * item.quantity).toFixed(2)}</p>
+        <i class="bi bi-x-circle remove-icon" data-index="${index}"></i>
+      `;
         cartItemsContainer.appendChild(cartItemElement);
       });
     }
@@ -468,35 +466,43 @@
   // Function to attach event listeners to Add to Cart buttons
   function attachAddToCartListeners() {
     document.querySelectorAll(".product").forEach((button) => {
-      const isOutOfStock = button.getAttribute("data-out-of-stock") === "true";
-      if (isOutOfStock) {
-        button.classList.add("out-of-stock");
-        button.disabled = true;
-        button.textContent = "Out of Stock"; // Change the button text to "Out of Stock"
-      } else {
-        button.addEventListener(
-          "click",
-          (e) => {
-            e.preventDefault();
-            const productElement = button.closest(".portfolio-item");
-            const productName = productElement.querySelector("h4").innerText;
-            const quantityDiv = button.parentElement.querySelector(".quantity");
-            const quantityInput = quantityDiv.querySelector(".count");
+      // Skip if the button already has the event listener
+      if (!button.classList.contains("initialized")) {
+        const isOutOfStock =
+          button.getAttribute("data-out-of-stock") === "true";
+        if (isOutOfStock) {
+          button.classList.add("out-of-stock");
+          button.disabled = true;
+          button.textContent = "Out of Stock"; // Change the button text to "Out of Stock"
+        } else {
+          button.addEventListener(
+            "click",
+            (e) => {
+              e.preventDefault();
+              const productElement = button.closest(".portfolio-item");
+              const productName = productElement.querySelector("h4").innerText;
+              const quantityDiv =
+                button.parentElement.querySelector(".quantity");
+              const quantityInput = quantityDiv.querySelector(".count");
 
-            // Show the quantity selection tool
-            quantityDiv.style.display = "block";
-            // Remove the "Add to Cart" button
-            button.style.display = "none";
+              // Show the quantity selection tool
+              quantityDiv.style.display = "block";
+              // Remove the "Add to Cart" button
+              button.style.display = "none";
 
-            // Add the item to the cart with the initial quantity
-            const quantity = quantityInput.value;
-            const priceText =
-              button.parentElement.querySelector("span").textContent;
-            const price = parseFloat(priceText.match(/\d+(\.\d+)?/)[0]); // Extract numeric value from the price text
-            addToCart(productName, price, quantity);
-          },
-          { once: true }
-        ); // Attach the event listener only once
+              // Add the item to the cart with the initial quantity
+              const quantity = quantityInput.value;
+              const priceText =
+                button.parentElement.querySelector("span").textContent;
+              const price = parseFloat(priceText.match(/\d+(\.\d+)?/)[0]); // Extract numeric value from the price text
+              addToCart(productName, price, quantity);
+            },
+            { once: true }
+          );
+
+          // Mark the button as initialized
+          button.classList.add("initialized");
+        }
       }
     });
   }
