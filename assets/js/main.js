@@ -379,7 +379,7 @@
 
   // Function to send order via WhatsApp
   function sendOrder(userDetails) {
-    let message = `${userDetails.shopName}\nAddress: ${userDetails.shopAddress}\n\n`;
+    let message = `${userDetails.shopName}\nMarket: ${userDetails.shopAddress}\n\n`;
     cartItems.forEach((item) => {
       message += `${item.productName} = ${item.quantity}\n`;
     });
