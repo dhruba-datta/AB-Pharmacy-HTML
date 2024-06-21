@@ -328,6 +328,76 @@
     restoreAddToCartButton(removedItem.productName);
   }
 
+  // Initialize the cart to show "Your cart is empty." by default
+  document.addEventListener("DOMContentLoaded", () => {
+    updateCart();
+    attachAddToCartListeners();
+    setupOrderFormModal();
+  });
+
+  // Function to setup the order form modal
+  function setupOrderFormModal() {
+    var modal = document.getElementById("orderFormModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Open the form modal when the Order Now button is clicked
+    document.querySelector(".order-button").addEventListener("click", () => {
+      if (cartItems.length > 0) {
+        modal.style.display = "block";
+      } else {
+        alert("Your shopping cart is empty!");
+      }
+    });
+
+    // Close the form modal when the close button is clicked
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    // Close the form modal when clicking outside of it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    // Handle the form submission
+    document
+      .getElementById("orderForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const shopName = document.getElementById("shopName").value;
+        const shopAddress = document.getElementById("shopAddress").value;
+
+        // Send order details to WhatsApp
+        sendOrder({ shopName, shopAddress });
+
+        // Close the form modal
+        modal.style.display = "none";
+      });
+  }
+
+  // Function to send order via WhatsApp
+  function sendOrder(userDetails) {
+    let message = `${userDetails.shopName}\nAddress: ${userDetails.shopAddress}\n\n`;
+    cartItems.forEach((item) => {
+      message += `${item.productName} = ${item.quantity}\n`;
+    });
+    const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappLink, "_blank");
+
+    // Restore the "Add to Cart" buttons and reset the quantities
+    cartItems.forEach((item) => {
+      restoreAddToCartButton(item.productName);
+    });
+
+    // Empty the cart
+    cartItems = [];
+    updateCart();
+  }
+
   // Function to restore "Add to Cart" button
   function restoreAddToCartButton(productName) {
     const productElement = Array.from(
@@ -346,6 +416,7 @@
         addToCartButton.style.display = "none";
 
         const quantityInput = quantityDiv.querySelector(".count");
+        quantityInput.value = 1; // Reset the quantity to 1
         const quantity = quantityInput.value;
         const priceText =
           addToCartButton.parentElement.querySelector("span").textContent;
@@ -354,22 +425,6 @@
       },
       { once: true }
     );
-  }
-
-  // Function to send order via WhatsApp
-  function sendOrder() {
-    let message = `${userDetails.name}\nAddress: ${userDetails.address}\n\n`;
-    cartItems.forEach((item) => {
-      message += `${item.productName} = ${item.quantity}\n`;
-    });
-    const whatsappLink = `https://wa.me/+8801912555765?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappLink, "_blank");
-
-    // Empty the cart
-    cartItems = [];
-    updateCart();
   }
 
   // Increment quantity
